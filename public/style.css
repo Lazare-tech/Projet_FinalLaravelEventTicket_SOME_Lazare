@@ -1,0 +1,297 @@
+#intro-example {
+    background-image: url(images/adult-1850925_960_720.jpg);
+    height: 100vh;
+}
+
+.l {
+    text-decoration: none;
+}
+
+.coaching {
+    font-size: 5rem;
+}
+
+/* media hero party */
+@media (max-width:1047px){
+    #intro-example{
+        height: 50vh;
+    }
+    #intro-about{
+        height: 45vh;
+    }
+}
+@media(max-width:423px) {
+    .coaching {
+        font-size: 3rem;
+    }
+
+    /* #intro-example {
+
+        height: 50vh;
+
+    } */
+    #intro-about{
+        height: 100vh;
+    }
+
+}
+@media (max-width:423px){
+    #intro-about{
+        height: 50vh;
+    }
+    
+}
+
+/* image salles */
+.salle_sport_revolutionnaire,
+.salle_sport_yoga,
+.salle_sport_aquatique {
+    height: 25rem;
+
+}
+
+/* media image salle */
+@media (max-width:423px) {
+
+    .salle_sport_revolutionnaire,
+    .salle_sport_yoga,
+    .salle_sport_aquatique {
+        height: 18rem;
+
+    }
+
+    /* formules parties */
+    .formule_choice {
+        font-size: 2rem;
+
+    }
+    /* card premium and prime party */
+    .premium, .complete{
+        width: 14rem;
+        /* position: absolute; */
+        right: 1rem;
+        margin-left: 2rem;
+    }
+  
+    .ii{
+        font-size: 0.9rem;
+    }
+    .fa-check,.fa-times{
+        font-size: 1.3rem;
+    }
+    /* equipe party */
+    .equipe{
+        height: 19rem !important;
+        width: 14rem !important;
+        border-radius: 0px 0px 0px 0px !important;
+    }
+    .coach{
+        margin-left: 1.1rem;
+    }
+    
+}
+/* notre equipe party */
+.equipe{
+    height: 23rem;
+}
+/* blog hero */
+.bg-secondary{
+    height: 50vh;
+}
+.blog-img{
+    padding-top: 7rem;
+    border-radius: 50%;
+}
+.blog-btn{
+    padding-top: 18rem;
+    border-radius: 50%;
+}
+.actu{
+    background-color: #e00069;
+}
+.conseils_fitness{
+    background:#52cbc9
+}
+.interview{
+    background: #ff9100;
+}
+.motivation{
+    background: #bd09e5;
+}
+.bien-etre{
+    background: #92a800;
+}
+.conseils_nutrition{
+    background:#0022ff;
+}
+.actu{
+    background-color: #e00069;
+}
+.conseils_fitness{
+    background:#52cbc9
+}
+.interview,.actu,.conseils_fitness,
+.motivation,
+.bien-etre,
+.conseils_nutrition{
+    color: white;
+    font-weight: bold;
+}
+.BLOG{
+    /* padding-top: 11rem;
+    padding-left: 4rem; */
+    position: absolute;
+    top:13rem;
+    left: 3.7rem;
+}
+.blog{
+    color: white;
+    font-weight: 220;
+}
+.t{
+    font-size: 1.3rem;
+    color: white;
+}
+/* carte parties */
+.card-conseil{
+    padding-top: 31rem;
+}
+/* page about block */
+#intro-about{
+    background-image: url(images/heroAbout.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    /* background-size: 50vh; */
+    background-size: cover;
+
+
+}
+.tex{
+    
+    font-size: 1.25rem;
+    font-style: normal;
+}
+.coachS{
+    height: 23rem;
+}
+#intro-f{
+    background-image: url(images/rire.jpg);
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+@media (max-width:300px){
+    .seance{
+        font-size: 1.8rem !important;
+        font-weight: 500;
+    }
+}
+.seance{
+    font-size: 2.6875em;
+    line-height: 1.11628em;  
+    font-weight: 300;  
+}
+.bloc-text{
+    width: 25em;
+}
+.foote{
+    text-decoration: none;
+}
+/* blog media query */
+@media (max-width:755px){
+    .blog,.td{
+        /* text-align: center; */
+        font-size: 4rem;
+    
+    }
+    /* .blog-img{
+        padding-top: 7rem;
+        border-radius: 50%;
+    } */
+    .blog-btn{
+        /* padding-top: 10rem; */
+        border-radius: 50%;
+    }
+    .bl{
+      
+    }
+    .sujet{
+        color: white;
+    }
+    .BLOG{
+    }
+}
+@media(max-width:721px){
+    .blog-btn{
+        padding-top: 3rem;
+        border-radius: 50%;
+    }
+   
+}
+@media(max-width:1011px){
+    .card-conseil{
+        padding-top: 4rem !important;
+    }
+   
+}
+@media (max-width:1047px){
+    #intro-about{
+        height: 50vh !important;
+    }
+}
+@media(max-width:337px){
+  .actus , .bl{
+      font-size: 1.3rem;
+  }
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .flex-item-left {
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  .flex-item-right {
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  /* Responsive layout - makes a one column-layout instead of a two-column layout */
+  @media (max-width: 800px) {
+    .flex-item-right, .flex-item-left {
+      flex: 100%;
+    }
+  }
+  /* partie verte section */
+  
+
+.na{
+    color: green;
+}
+/* visa sejour sante section party */
+.fa-plus{
+    position: relative;
+    /* top:0.1rem; */
+    color: white;
+
+}
+.condition{
+    background: #158467;
+}
+.voir_condition{
+    background-color: #f9c11c;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.4rem;
+   
+}
+.plus{
+    position: relative;
+    bottom: 1.9rem;
+}

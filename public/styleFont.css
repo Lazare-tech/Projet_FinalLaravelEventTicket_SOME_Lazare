@@ -1,0 +1,188 @@
+/* hero party page index */
+.hero_acc{
+    background-image: url(images/slider1.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.b{
+    color: red;
+}
+@media(max-width:1083px){
+    .hero_acc{
+        height: 50vh;
+    }
+}
+.r{
+    color: yellow;
+}
+.na{
+    color: green;
+}
+/* ville a visiter page index  */
+.ouaga_card{
+    background-image: url(images/ousga.jpg);
+}
+.bobo_card{
+    background-image: url(images/sya.jpg);
+}
+.banfora_card{
+    background-image: url(images/banfora.jpg);
+}
+/* hero party page bobo */
+#intro-example{
+    background-image: url(images/Grand-Mosquee-Bobo.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* party evenement bobo */
+.image_evenement{
+    border-radius: 50%;
+    width: 100px;
+}
+.evenement_culturel{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.logo_evenement{
+    border-radius: 50%;
+    width: 100px;
+}
+/* hero pge ouaga */
+#hero_ouaga{
+    /* background-image: url(images/Monument_des_martyrs_slider.jpg); */
+    background-image: url(images/visite-monument.jpg);
+
+ height: 100vh;   
+ background-size: cover;
+}
+.bienvenue,.sya,.pot{
+    font-size: 3rem;
+}
+@media (max-width:971px){
+    .car{
+        padding-top: 2rem;
+    }
+}
+.ville{
+    opacity: 1;
+}
+/* home page party section sejour */
+.sejour{
+    font-size: 1.5rem;
+}
+@media (max-width:767px){
+
+.sejournez{
+    font-size: 1.5rem;
+}
+}
+/* media page bobo */
+@media (max-width:341px){
+    .bienvenue{
+        font-size: 2.4rem;
+    }
+    .sya{
+        font-size: 2.8rem;
+    }
+    .evenement_bobo{
+        font-size: 1.3rem;
+    }
+}
+@media (max-width:391px){
+    .pot{
+        font-size: 1.4rem !important;
+    }
+    .diversites{
+        font-size: 1.4rem;
+        
+    }
+    #hero_ouaga{
+    }
+}
+@media (max-width:1127px){
+    #intro-example{
+        height: 50vh;
+    }
+    #hero_ouaga{
+        height: 50vh;
+    }
+}
+/* visa sejour sante section party */
+.fa-plus{
+    position: relative;
+    /* top:0.1rem; */
+    color: white;
+
+}
+.condition{
+    background: #158467;
+}
+.voir_condition{
+    background-color: #f9c11c;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.4rem;
+   
+}
+.plus{
+    position: relative;
+    bottom: 1.9rem;
+}
+/* hero page banf */
+#hero_banf{
+    background-image: url(images/slider1.jpg);
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.9;
+}
+.carte{
+    width: 550px;
+    height: 400px;
+    flex: 50%;
+}
+@media (max-width:523px){
+    .carte{
+        width: 400px;
+        height: 200px;
+    }
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .flex-item-left {
+    padding: 10px;
+    flex: 50%;
+    
+  }
+  
+  .flex-item-right {
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 50%;
+  }
+  @media (max-width:429px){
+    .flex-item-left {
+      position: relative;
+      right: 1.1rem;
+      }
+  }
+@media (max-width:1121px){
+    #hero_banf{
+        height: 50vh;
+    }
+    .bienvenue_banf{
+        font-size: 3rem !important;
+    }
+}
+.bienvenue_banf,.cascade{
+    font-size: 4rem;
+    
+}
+.cascade{
+    color: #f59019;
+}

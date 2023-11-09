@@ -1,0 +1,298 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "Verdana, Geneva, Tahoma, sans-serif";
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: #fbd63f;
+  }
+  .hero-buttons {
+    margin-top: 20px;
+  }
+  .btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background-color: #007bff;
+  }
+  .btn-secondary {
+    background-color: #6c757d;
+  }
+  
+ .form-select{
+   height: 5rem;
+   width:15rem;
+   border-radius: 3rem;
+   
+ }
+ .bouton-cherche
+ {
+   background: #ffc107;
+ }
+ .bouton-cherche:hover
+ {
+   background: #6c757d;
+ }
+.card-evenement{
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.categorie-evenement
+{
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.categorie-evenement:hover{
+  /* background: #162238; */
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+}
+.card_categorie-evenement
+{
+  width: 5rem;
+}
+ .rechercher
+ {
+   font-size: 1.3rem;
+   font-weight: bold;
+ }
+  /* .................................................................................................. */
+  /* .................................................................................................. */
+
+/* mg */
+.voir_condition{
+    background-color: #f9c11c;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.4rem;
+   
+}
+.plus{
+    position: relative;
+    bottom: 1.9rem;
+}
+ /* evenement a venir */
+ .fa-plus{
+  position: relative;
+  /* top:0.1rem; */
+  color: white;
+
+}
+  /* fin evenement a venir */
+  .easy
+  {
+    font-style: italic;
+  }
+.foote{
+  text-decoration: none;
+}
+/* .......................................................................................... */
+/* //section apres le heros ..............................................................*/
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.creer{
+  background: red;
+}
+
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #6528e0;
+  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-border-color: #5a23c8;
+}
+.bd-mode-toggle {
+  z-index: 1500;
+}
+.team
+{
+  
+}
+.card-evenement
+{
+  /* width: 29rem; */
+}
+.card-evenement-miniature
+{
+  width: 17rem;
+}
+.card-evenement-photo-miniature{
+  height: 10rem;
+
+}
+.card-evenement-photo{
+  height: 19rem;
+}
+.evenement-titre
+{
+  font-size: 1rem;
+}
+/* ......................................................................... */
+.cover {
+  position: relative;
+  padding: 0px 30px;
+  margin-top: 100px;
+}
+
+.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-images {
+  position: relative;
+  
+  width: 100%;
+  padding: 40px 0px;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  height: 200px;
+  padding: 0px 15px;
+  margin: 3px 10px;
+  /* border: 1px solid #f1f1f1; */
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 15px 2px rgb(0 0 0 / 10%);;
+  box-shadow: 0px 0px 15px 2px rgb(0 0 0 / 10%);;
+}
+
+.child img, .child > svg {
+  position: absolute;
+  margin-top: -195px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  background: #03A9F4;
+}
+
+.scroll-images::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #aaa;
+}
+
+.scroll-images::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 25px;
+}
+/*avis commentaires......................................................................*/
+.avis{
+  background:#2d384a;
+  color: white;
+}
+.commentaire{
+  color: white;
+}
