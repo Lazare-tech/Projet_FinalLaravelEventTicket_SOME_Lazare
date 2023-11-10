@@ -8,7 +8,7 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <meta name="generator" content="Hugo 0.112.5">
-  <title>Headers · Bootstrap v5.3</title>
+  <title>EasyTicket</title>
   <link rel="stylesheet" href="style_index.css">
   <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="jumbotrons.css">
@@ -35,7 +35,7 @@
  <!-- ***** Main Banner Area Start ***** -->
  <section class="section main-banner" id="top" data-section="section1">
     <video autoplay muted loop id="bg-video">
-        <source src="assets/images/course-video.mp4" type="video/mp4" />
+        <source src="assets/images/production_id_4440815 (1080p).mp4" type="video/mp4" />
     </video>
 
     <div class="video-overlay header-text">
@@ -67,7 +67,6 @@
             Selectionnez votre evenemente et Achetez vos billets en quelques clics seulement!!
               </p>
               <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
-              <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
           </div>
           </div>
         </div>
@@ -87,7 +86,6 @@
               
               </p>
               <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
-              <div class="scroll-to-section"><a href="#section3">Details</a></div>
           </div>
           </div>
         </div>
@@ -105,7 +103,6 @@
                 guiderons a chaque etape pour faire de votre evenement un succes.    
               </p>
               <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
-              <div class="scroll-to-section"><a href="#section4">Read More</a></div>
           </div>
           </div>
         </div>
@@ -151,6 +148,8 @@
     </div>
   </div>
 </section>
+
+
 <!-- end section -->
 <div class="b-example-divider bg-secondary"></div>
 <section class="container mt-5">
@@ -158,86 +157,112 @@
     <h5 class="">Evenements a porte de mains</h5>
     <h3 class=""><span class="text-dark">Decouvrez</span>nos categories</h3>
   </div>
-  <div class="row  g-4 mt-4 justify-content-center">
-  <div class="col-lg-2">
-    <div class="card categorie-evenement text-center"> <!-- Added 'text-center' class -->
-      <img src="images/musqiue.svg" class="card_categorie-evenement" alt="..." style="margin: auto;"> <!-- Added 'style="margin: auto;"' to center the image -->
-      <div class="card-body ">
-        <h5 class="card-title text-warning fw-bold">Musique</h5>
-      </div>
-    </div>
-</div>
-
-    <div class="col-lg-2">
-      <div class="card categorie-evenement text-center">
-        <img src="images/festival.svg" class="card_categorie-evenement" alt="Festival"  style="margin: auto;">
-        <div class="card-body">
-          <h5 class="card-title text-warning fw-bold">Festival</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-2">
-      <div class="card categorie-evenement text-center">
-        <img src="images/concert.svg" class="card_categorie-evenement" alt="Concert"  style="margin: auto;">
-        <div class="card-body">
-          <h5 class="card-title text-warning fw-bold">Concert</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-2 ">
-      <div class="card categorie-evenement text-center">
-        <img src="images/loisirs.svg" class="card_categorie-evenement" alt="Loisirs"  style="margin: auto;">
-        <div class="card-body">
-          <h5 class="card-title text-warning fw-bold">Loisirs</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-2 ">
-      <div class="card categorie-evenement text-center">
-        <img src="images/fete.svg" class="card_categorie-evenement text-center" alt="fete"  style="margin: auto;">
-        <div class="card-body">
-          <h5 class="card-title text-warning fw-bold">Fete</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 ">
-      <div class="card categorie-evenement text-center">
-        <img src="images/salonPro.svg" class="card_categorie-evenement " alt="fete"  style="margin: auto;">
-        <div class="card-body">
-          <h5 class="card-title text-warning fw-bold">Salon</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card categorie-evenement text-center">
-        <!-- <img src="images/film-solid.svg" class="" alt="cinema"> -->
-        <i class="fas fa-film fa-5x card_categorie-evenement" style="color: #e8b66b;margin:auto"></i>
-          <div class="card-body">
-          <h5 class="card-title text-warning fw-bold">Cinemea</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card categorie-evenement text-center">
-        <img src="images/workshop.svg" class="card_categorie-evenement" alt="cinema" style="margin: auto;">
-        <div class="card-body">
-          <h5 class="card-title text-warning fw-bold">Atelier</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card categorie-evenement text-center">
-        <img src="images/salonGrangPublic.svg" class="card_categorie-evenement" alt="salon grand public" style="margin: auto;">
-        <div class="card-body">
-          <h5 class="card-title text-warning fw-bold">Salon Grang public</h5>
-        </div>
-      </div>
-    </div>
  
+</section>
+<div class="container mt-5 catalogue_categorie">
+  <div class="row">
+      <!-- Colonne 1 -->
+      <div class="col-md-6">
+          <div class="card mb-4" style="height: 19rem">
+              <div class="card-body">
+                  Contenu de la carte 1
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 d-flex flex-column">
+        <div class="card categorie-evenement text-center " style="background: #162238;;">
+          <img src="images/festival.svg" class="card_categorie-evenement" alt="Festival"  style="margin: auto;">
+          <div class="card-body">
+            <h5 class="card-title text-warning titre_evenement">Festival</h5>
+          </div>
+        </div>
+        <div class="card categorie-evenement text-center mt-2" style="background: #162238;">
+          <img src="images/salonGrangPublic.svg" class="card_categorie-evenement" alt="salon grand public" style="margin: auto;">
+          <div class="card-body">
+            <h5 class="card-title text-warning titre_evenement">Salon Grang public</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Colonne 2 -->
+      <div class="col-md-3 d-flex flex-column">
+        
+          <div class="card categorie-evenement text-center" style="background: #162238;"> <!-- Added 'text-center' class -->
+            <img src="images/musqiue.svg" class="card_categorie-evenement" alt="..." style="margin: auto;"> <!-- Added 'style="margin: auto;"' to center the image -->
+            <div class="card-body ">
+              <h5 class="card-title text-warning titre_evenement">Musique</h5>
+            </div>
+          </div>
+         
+            <div class="card categorie-evenement text-center mt-2" style="background: #162238;">
+              <img src="images/workshop.svg" class="card_categorie-evenement" alt="cinema" style="margin: auto;">
+              <div class="card-body">
+                <h5 class="card-title text-warning  titre_evenement">Atelier</h5>
+              </div>
+            </div>
+             
+          <!-- Colonne 4 -->
+         
+      </div>
     
+  </div>
+  <div class="row">
+      <div class="col-lg-3">
+        <div class="card categorie-evenement text-center" style="background: #162238;">
+          <img src="images/concert.svg" class="card_categorie-evenement" alt="Concert"  style="margin: auto;">
+          <div class="card-body">
+            <h5 class="card-title text-warning  titre_evenement">Concert</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card categorie-evenement text-center" style="background: #162238;">
+          <img src="images/loisirs.svg" class="card_categorie-evenement" alt="Loisirs"  style="margin: auto;">
+          <div class="card-body">
+            <h5 class="card-title text-warning  titre_evenement">Loisirs</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 ">
+        <div class="card categorie-evenement text-center" style="background: #162238;">
+          <img src="images/fete.svg" class="card_categorie-evenement text-center" alt="fete"  style="margin: auto;">
+          <div class="card-body">
+            <h5 class="card-title text-warning  titre_evenement">Fete</h5>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-lg-3">
+        <div class="card categorie-evenement text-center" style="background: #162238;">
+          <!-- <img src="images/film-solid.svg" class="" alt="cinema"> -->
+          <i class="fas fa-film fa-5x card_categorie-evenement" style="color: #e8b66b;margin:auto"></i>
+            <div class="card-body">
+            <h5 class="card-title text-warning  titre_evenement">Cinemea</h5>
+          </div>
+        </div>
+      </div>
+     
+  </div>
+</div>
+<!-- <section class="container mt-5">
+  <div class="row text-center mb-4">
+    <h5 class="fw-bold text-uppercase">Événements à portée de main</h5>
+    <h3 class="fw-bold"><span class="text-dark">Découvrez</span> nos catégories</h3>
+  </div>
+  <div class="row g-4 justify-content-center">
+
+    <div class="col-lg-3">
+      <div class="card categorie-evenement text-center p-4 shadow">
+        <img src="images/musique.svg" class="card_categorie-evenement" alt="Musique" style="margin: auto;">
+        <div class="card-body">
+          <h5 class="card-title text-warning fw-bold mb-0">Musique</h5>
+          <p class="card-text">Explorez le monde musical</p>
+        </div>
+      </div>
     </div>
 
-</section>
+
+  </div>
+</section> -->
 
 
 <!-- <section class="container py-5">

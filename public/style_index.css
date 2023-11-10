@@ -58,23 +58,36 @@
  {
    background: #6c757d;
  }
-.card-evenement{
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
+
 .categorie-evenement
 {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
 }
-.categorie-evenement:hover{
-  /* background: #162238; */
-  color: white;
+.categorie-evenement{
+  /* color: white;
   cursor: pointer;
-  transition: all 0.3s ease-out;
-    color: rgba(255, 255, 255, 0.8);
+  transition: all 0.7s ease-out;
+    color: rgba(255, 255, 255, 0.8); */
+    /* background: #162238; */
+
 }
+.section_categorie{
+  background: #162238;
+
+}
+/* .eve{
+  background: #162238;
+
+} */
+.catalogue_categorie{
+
+  
+}
+
 .card_categorie-evenement
 {
+  
   width: 5rem;
 }
  .rechercher
