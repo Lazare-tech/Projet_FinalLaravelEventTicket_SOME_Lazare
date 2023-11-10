@@ -43,8 +43,8 @@
             <h6>Decouvrez l'Experience Ultime</h6>
             <h2><em>L'endroit ideal</em>pour l'evenementiel</h2>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <a href="#trouver-evenement"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Trouvez des evenements</button></a>
-              <button type="button" class="btn btn-warning btn-lg px-4 text-dark">Créez un evenement</button>
+              <a href="#trouver-evenement"><button type="button" class=" btn-lg px-4 text-white fw-bold gap-3 trouvez_des_evenement">Trouvez des evenements</button></a>
+              <button type="button" class="px-4 text-dark creez_un_evenement">Créez un evenement</button>
             </div>
         </div>
     </div>
@@ -152,21 +152,25 @@
 
 <!-- end section -->
 <div class="b-example-divider bg-secondary"></div>
-<section class="container mt-5">
+<section class="carte-container">
+<section class="container mt-0">
   <div class="row">
-    <h5 class="">Evenements a porte de mains</h5>
-    <h3 class=""><span class="text-dark">Decouvrez</span>nos categories</h3>
+    <h5 class="text-white">Evenements a porte de mains</h5>
+    <h3 class=""><span class="text-white">Decouvrez</span><span class="text-warning">nos categories</span></h3>
   </div>
- 
 </section>
-<div class="container mt-5 catalogue_categorie">
+<div class="container mt-5 catalogue_categorie ">
   <div class="row">
       <!-- Colonne 1 -->
-      <div class="col-md-6">
-          <div class="card mb-4" style="height: 19rem">
-              <div class="card-body">
+      <div class="col-md-6" style="background:#162238 ;">
+          <div class="card mb-4">
+              <!-- <div class="card-body">
                   Contenu de la carte 1
-              </div>
+              </div> -->
+           
+              <video autoplay muted loop>
+                <source src="assets/images/production_id_4440815 (1080p).mp4" type="video/mp4" />
+            </video>
           </div>
       </div>
       <div class="col-lg-3 d-flex flex-column">
@@ -243,6 +247,7 @@
      
   </div>
 </div>
+</section>
 <!-- <section class="container mt-5">
   <div class="row text-center mb-4">
     <h5 class="fw-bold text-uppercase">Événements à portée de main</h5>
@@ -337,9 +342,9 @@
   <section class="container ">
 
     <div class="row pt-3">
-      <h5 class="card-title text-center text-warning fw-bold">Evenememts</h5>
+      <h5 class="card-title text-center text-warning ">Evenememts</h5>
       <p class="text-center fs-5">Particiez aux evenements qui vous inspirent a travers le monde</p>
-      <a href="#"><button class="btn btn-warning">Voir tous les evenements</button></a>
+      <a href="#"><button class="voir_tous_evenement">Voir tous les evenements</button></a>
     </div>
     <!-- <button class="btn btn-warning">Voir</button> -->
 
@@ -350,7 +355,7 @@
           <img src="images/event10.jpeg" class="card-img-top card-evenement-photo" alt="Evenement" />
 
           <div class="card-body">
-            <button class="btn btn-warning float-end plus"><i class="fas fa-plus"></i></button>
+            <button class="voir_plus float-end plus"><i class="fas fa-plus"></i></button>
           
             <div class="it mt-4 mb-3">
               <i class="fas fa-table fa-1x " style="color: #1f5135;"></i>
@@ -377,7 +382,7 @@
           <img src="images/event2.jpeg" class="card-img-top card-evenement-photo" alt="Evenement" />
 
           <div class="card-body">
-            <button class="btn btn-warning float-end plus"><i class="fas fa-plus"></i></button>
+            <button class="voir_plus float-end plus"><i class="fas fa-plus"></i></button>
           
             <div class="it mt-4">
               <i class="fas fa-table fa-1x " style="color: #1f5135;"></i>
@@ -405,7 +410,7 @@
           <img src="images/event4.jpeg" class="card-img-top card-evenement-photo" alt="Evenement" />
 
           <div class="card-body">
-            <button class="btn btn-warning float-end plus"><i class="fas fa-plus"></i></button>
+            <button class="voir_plus float-end plus"><i class="fas fa-plus"></i></button>
 
             <div class="it mt-4">
               <i class="fas fa-table fa-1x " style="color: #1f5135;"></i>

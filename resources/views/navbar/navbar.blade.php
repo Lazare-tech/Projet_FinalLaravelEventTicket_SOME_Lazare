@@ -1,29 +1,44 @@
-<header class="main-header clearfix" role="header">
-  <div class="logo">
-    <a href="#"><em>Easy</em>Ticket</a>
+
+<header class="main-header clearfix" role="header">  
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="logo">
+      <a href="#"><em>Easy</em>Ticket</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+      aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse px-5" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+        <li class="nav-item">
+          <a class="nav-link active text-white fw-bold" aria-current="page" href="#">ACCEUIL</a>
+        </li>
+        {{-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Site touristiques
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="site_bobo.php">Bobo-Dioulasso</a></li>
+            <li><a class="dropdown-item" href="site_banfora.php">Banfora</a></li>
+            <li><a class="dropdown-item" href="site_ouaga.php">Ouagadougou</a></li>
+          </ul>
+        </li> --}}
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="#">A PROPOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="#">FAQ</a>
+        </li>
+      </ul>
+
+                    
+      <a href="#"><button class="se_connecter text-white ">Se connecter</button></a>
+      <a href="#"><button class="sinscrire">S'inscrire</button></a>
+      
+
+    </div>
   </div>
-  <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
-  <nav id="menu" class="main-nav" role="navigation">
-    <ul class="main-menu">
-      <li><a href="#section1">Accueill</a></li>
-      <li class="has-submenu"><a href="#section2">A Propos</a>
-        {{-- <ul class="sub-menu">
-          <li><a href="#section2">Who we are?</a></li>
-          <li><a href="#section3">What we do?</a></li>
-          <li><a href="#section3">How it works?</a></li>
-          <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li>
-        </ul> --}}
-      </li>
-      <li><a href="#">FAQ</a></li>
-      {{-- <li><a href="#section6">Contact</a></li>
-      <li><a href="https://templatemo.com" class="external">External</a></li> --}}
-    </ul>
-  </nav>
+</nav>
 </header>
-
-
-{{-- Move the buttons inside the same 'nav' element -->
-<li class="ml-auto float-end"> 
-  <button class="btn btn-primary fw-bold">Connexion</button>
-  <button class="btn btn-danger fw-bold">S'inscrire</button>
-</li> --}}

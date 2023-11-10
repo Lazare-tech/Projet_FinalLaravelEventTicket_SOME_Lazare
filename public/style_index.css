@@ -1,3 +1,39 @@
+/* ........................navbar */
+.se_connecter{
+  background: #198754;
+  border-radius: 5%;
+  height: 2.5rem;
+  margin-left: 1rem;
+
+}
+.sinscrire{
+  background: #0dcaf0;
+  border-radius: 5%;
+  height: 2.5rem;
+}
+.creez_un_evenement{
+  background: #ffc107;
+  border-radius: 6%;
+height: 2.7rem;
+}
+.trouvez_des_evenement{
+  background: #57a8f2;
+  border-radius: 6%;
+  height: 2.7rem;
+}
+.voir_tous_evenement{
+  background: #ffc107;
+  border-radius: 6%;
+  height: 2.7rem;
+  
+}
+/* liste evenement party */
+.voir_plus{
+  background: #ffc107;
+  width: 2.5rem;
+  height: 2.3rem;
+  border-radius: 6%;
+}
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -76,6 +112,12 @@
   background: #162238;
 
 }
+.carte-container {
+   background: #162238;
+
+  }
+
+
 /* .eve{
   background: #162238;
 
