@@ -15,28 +15,47 @@
         <li class="nav-item">
           <a class="nav-link active text-white fw-bold" aria-current="page" href="#">ACCEUIL</a>
         </li>
-        {{-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Site touristiques
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="site_bobo.php">Bobo-Dioulasso</a></li>
-            <li><a class="dropdown-item" href="site_banfora.php">Banfora</a></li>
-            <li><a class="dropdown-item" href="site_ouaga.php">Ouagadougou</a></li>
-          </ul>
-        </li> --}}
+      
         <li class="nav-item">
           <a class="nav-link text-white fw-bold" href="#">A PROPOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="#">CREER UN EVENEMENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="#">CONTACTS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white fw-bold" href="#">FAQ</a>
         </li>
       </ul>
 
-                    
-      <a href="#"><button class="se_connecter text-white ">Se connecter</button></a>
-      <a href="#"><button class="sinscrire">S'inscrire</button></a>
-      
+       <div class="">
+        @if (Route::has('login'))
+        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+            @auth
+            <div class="d-flex align-items-center">
+                <x-responsive-nav-link :href="route('profile.edit')">
+                    <button class="bouton text-white pt-2">
+                        {{ Auth::user()->name }}
+                    </button>
+                </x-responsive-nav-link>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button class="se_deconnecter pt-2">{{ __('Deconnexion') }}</button>
+                </form>
+            </div>
+            @else
+            <a href="{{ route('login') }}"><button class="se_connecter text-white">Se connecter</button></a>
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}"><button class="sinscrire">S'inscrire</button></a>
+            @endif
+            @endauth
+        </div>
+        @endif
+    </div>
+    </div>                                                                                            
+                                                                
 
     </div>
   </div>
