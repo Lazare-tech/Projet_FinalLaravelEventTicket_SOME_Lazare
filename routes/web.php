@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+USE App\Http\Controllers\EvenementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,5 +26,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//EVENEMENT
+Route::get('create-evenement',[EvenementController::class, 'create'])->name('agence.create-evenement');
+Route::post('/ajouter/traitement',[EvenementController::class, 'ajouter_traitement']);
+
+Route::get('evenement',[EvenementController::class, 'evenement']);
+
 
 require __DIR__.'/auth.php';

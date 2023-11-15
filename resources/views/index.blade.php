@@ -178,9 +178,10 @@
                   Contenu de la carte 1
               </div> -->
 
-            <video autoplay muted loop>
+            <!-- <video autoplay muted loop>
               <source src="assets/images/production_id_4440815 (1080p).mp4" type="video/mp4" />
-            </video>
+            </video> -->
+            <img src="images/ticket5.jpg" alt="">
           </div>
         </div>
         <div class="col-lg-3 d-flex flex-column">
@@ -222,7 +223,7 @@
         </div>
 
       </div>
-      <div class="row">
+      <div class="row pt-2">
         <div class="col-lg-3">
           <div class="card categorie-evenement text-center" style="background: #162238;">
             <img src="images/concert.svg" class="card_categorie-evenement" alt="Concert" style="margin: auto;">

@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
+use App\Modeles\Commentaire;
+use App\Models\Commande;
+use App\Models\Entreprise;
+use App\Models\AgenceEvenementielle;
 class User extends Authenticatable
 {
     use CrudTrait;
@@ -23,6 +26,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -43,4 +47,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    //
+    public function commentaires() {
+        return $this->hasMany(Commentaire::class);
+    }
+
+   
+
+    public function commandes() {
+        return $this->hasMany(Commande::class);
+    }
+
+  
+    public function entreprises()
+    {
+        return $this->belongsToMany(Entreprise::class);
+    }
+    public function agences() {
+        return $this->morphToMany(AgenceEvenementielle::class, 'user', 'agence_user');
+    }
+
+
 }

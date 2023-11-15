@@ -13,17 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();  
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('timezones', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->enum('role', ['utilisateur', 'agence_evenementielle'])->default('utilisateur');
-            $table->rememberToken();
+            $table->string('offset');
+            $table->string('diff_from_gtm');
             $table->timestamps();
-               });
+        });
     }
 
     /**
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('timezones');
     }
 };
