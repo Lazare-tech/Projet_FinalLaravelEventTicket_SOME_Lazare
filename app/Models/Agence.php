@@ -10,10 +10,12 @@ use App\Models\Evenement;
 class Agence extends Model
 {
     use HasFactory;
-    public function utilisateurs() {
-        return $this->morphToMany(Users::class, 'user', 'agence_user');
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
     public function evenements() {
-        return $this->hasMany(Evenements::class);
+        return $this->hasMany(Evenement::class);
     }
 }

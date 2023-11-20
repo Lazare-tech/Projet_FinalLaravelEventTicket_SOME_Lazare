@@ -19,12 +19,12 @@ return new class extends Migration
             $table->text('description');
             $table->string('adresse');
             $table->string('contact');
-            $table->string('telephone');
             $table->string('email');
             $table->string('site_web')->nullable();
-            // $table->unsignedBigInteger('utilisateur_id');
-            // $table->foreign('utilisateur_id')->references('id')->on('users');
             //
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
            
             
             $table->timestamps();

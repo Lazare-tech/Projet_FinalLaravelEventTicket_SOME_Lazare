@@ -19,8 +19,12 @@
 <div class="mt-4">
     <x-input-label for="role" :value="__('Role')" />
     <select id="role" name="role" class="block mt-1 w-full">
-        <option value="utilisateur">Utilisateur</option>
-        <option value="agence_evenementielle">Agence Événementielle</option>
+        <option selected>Role</option>
+
+    @foreach ($roles as $role )
+    <option value="{{ $role->id }}">{{ $role->nom }}</option>
+
+    @endforeach
     </select>
     <x-input-error :messages="$errors->get('role')" class="mt-2" />
 </div>

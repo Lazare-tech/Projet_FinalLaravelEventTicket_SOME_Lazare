@@ -15,14 +15,15 @@ return new class extends Migration
     {
         Schema::create('billets', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
+          $table->string('photo');
             $table->integer('prix');
-            $table->integer('quantite');
-            $table->boolean('disponibilite');
             $table->timestamps();
             // Clé étrangère vers evenements
 $table->unsignedBigInteger('evenement_id');
 $table->foreign('evenement_id')->references('id')->on('evenements')->onDelete('cascade');
+//
+$table->unsignedBigInteger('typebillet_id');
+$table->foreign('typebillet_id')->references('id')->on('typebillets')->onDelete('cascade');
 
           
         });

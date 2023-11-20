@@ -364,18 +364,20 @@
 
 
       <div class="row row-cols-1 row-cols-md-3 g-4 pb-4 pt-3 ">
+      @foreach ($evenements as $evenements )
+        
         <div class="col-lg-4 ">
           <div class="card card-evenement">
-            <img src="images/event10.jpeg" class="card-img-top card-evenement-photo" alt="Evenement" />
+            <img src="{{ asset('storage/' . $evenements->photo) }}" class="card-img-top card-evenement-photo" alt="Evenement" />
 
             <div class="card-body">
               <button class="voir_plus float-end plus"><i class="fas fa-plus"></i></button>
 
               <div class="it mt-4 mb-3">
                 <i class="fas fa-table fa-1x " style="color: #1f5135;"></i>
-                <span class="evenement-titre ">Samedi 3 Mars 23 a 19h00 (GMT) </span><br>
+                <span class="evenement-titre ">{{ $evenements->date_debut }} </span><br>
                 <i class="fas fa-map-marker-alt fa-1x mt-2" style="color: #1f5129;"></i>
-                <span class="evenement-titre ">Espace Morene</span>
+                <span class="evenement-titre ">{{ $evenements->lieu }}</span>
 
               </div>
 
@@ -389,95 +391,17 @@
                 <span class="float-end">3000FCFA</span>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card card-evenement">
-            <img src="images/event2.jpeg" class="card-img-top card-evenement-photo" alt="Evenement" />
-
-            <div class="card-body">
-              <button class="voir_plus float-end plus"><i class="fas fa-plus"></i></button>
-
-              <div class="it mt-4">
-                <i class="fas fa-table fa-1x " style="color: #1f5135;"></i>
-                <span class="evenement-titre ">Samedi 3 Mars 23 a 19h00 (GMT) </span><br>
-                <i class="fas fa-map-marker-alt fa-1x mt-2" style="color: #1f5129;"></i>
-                <span class="evenement-titre ">Espace Morene</span>
-
-              </div>
-
-              <!-- <div class="text-right">
-                        <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-youtube fa-2x" style="color: #cc0000;"></i></a>
-                    </div> -->
-              <div class="mt-4">
-                <i class="fas fa-money-check fa-2x" style="color: #1f5120;"></i>
-                <span class="float-end">3000FCFA</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card card-evenement">
-            <img src="images/event4.jpeg" class="card-img-top card-evenement-photo" alt="Evenement" />
-
-            <div class="card-body">
-              <button class="voir_plus float-end plus"><i class="fas fa-plus"></i></button>
-
-              <div class="it mt-4">
-                <i class="fas fa-table fa-1x " style="color: #1f5135;"></i>
-                <span class="evenement-titre ">Samedi 3 Mars 23 a 19h00 (GMT) </span><br>
-                <i class="fas fa-map-marker-alt fa-1x mt-2" style="color: #1f5129;"></i>
-                <span class="evenement-titre ">Espace Morene</span>
-
-              </div>
-
-              <!-- <div class="text-right">
-                        <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-youtube fa-2x" style="color: #cc0000;"></i></a>
-                    </div> -->
-              <div class="mt-4">
-                <i class="fas fa-money-check fa-2x" style="color: #1f5120;"></i>
-                <span class="float-end">3000FCFA</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-lg-4">
-          <div class="card card-evenement">
-            <!-- Your existing code for the card content -->
-            <img src="images/event4.jpeg" class="card-img-top card-evenement-photo" alt="Evenement" />
-
-            <div class="card-body">
-              <button class="voir_plus float-end plus"><i class="fas fa-plus"></i></button>
-
-              <div class="it mt-4">
-                <i class="fas fa-table fa-1x " style="color: #1f5135;"></i>
-                <span class="evenement-titre ">Samedi 3 Mars 23 a 19h00 (GMT) </span><br>
-                <i class="fas fa-map-marker-alt fa-1x mt-2" style="color: #1f5129;"></i>
-                <span class="evenement-titre ">Espace Morene</span>
-
-              </div>
-
-              <!-- <div class="text-right">
-                        <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-youtube fa-2x" style="color: #cc0000;"></i></a>
-                    </div> -->
-              <div class="mt-4">
-                <i class="fas fa-money-check fa-2x" style="color: #1f5120;"></i>
-                <span class="float-end">3000FCFA</span>
-              </div>
-            </div>
-            <!-- Add the label in the top-right corner -->
-            <div class="event-label">
+             <!-- Add the label in the top-right corner -->
+             <div class="event-label">
               <!-- You can customize the label text based on whether it's new or in a few days -->
-              <span class="label-text">Nouveau</span>
+              <span class="label-text">{{ $evenements->etat->nom }}</span>
             </div>
           </div>
+        </div>
+        @endforeach
+
+       
+       
         </div>
         
       </div>

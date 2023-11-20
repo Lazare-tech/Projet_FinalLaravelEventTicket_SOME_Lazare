@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
-
+use App\Models\Role;
 class RegisteredUserController extends Controller
 {
     /**
@@ -20,7 +20,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $roles= Role::all();
+        return view('auth.register',compact('roles'));
     }
 
     /**
@@ -34,14 +35,14 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'role' => ['required', 'in:utilisateur,agence_evenementielle'], // Ajoutez cette ligne
+            'role' => ['required'], // Ajoutez cette ligne
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role, // Ajoutez cette ligne
+            'role_id' => $request->role, // Ajoutez cette ligne
         ]);
 
         event(new Registered($user));

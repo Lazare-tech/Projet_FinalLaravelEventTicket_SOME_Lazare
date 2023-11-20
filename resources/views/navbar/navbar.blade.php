@@ -20,7 +20,7 @@
           <a class="nav-link text-white fw-bold" href="#">A PROPOS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-bold" href="{{  route('agence.create-evenement') }}">CREER UN EVENEMENT</a>
+          <a class="nav-link text-white fw-bold" href="{{  route('agence.evenement') }}">CREER UN EVENEMENT</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white fw-bold" href="#">CONTACTS</a>

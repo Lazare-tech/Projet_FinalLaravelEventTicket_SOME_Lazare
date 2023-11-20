@@ -32,7 +32,11 @@ $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('c
  //cle evenement
  $table->unsignedBigInteger('agence_id');
  $table->foreign('agence_id')->references('id')->on('agences')->onDelete('cascade');
-
+//
+   //
+   $table->unsignedBigInteger('etat_id');
+   $table->foreign('etat_id')->references('id')->on('etats')->onDelete('cascade');
+   
 
         });
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Billet;
 use App\Models\Facture;
 use App\Models\Commentaire;
-
+use App\Models\Etat;
 class Evenement extends Model
 {
     use HasFactory;
@@ -15,13 +15,14 @@ class Evenement extends Model
     protected  $fillable = [
         'nom',
         'lieu',
-        'type',
         'description',
         'resume',
         'photo',
         'fuseau_horaire',
         'date_debut',
         'date_fin',
+        'categorie_id',
+        'agence_id',
         
     ];
     
@@ -43,4 +44,13 @@ class Evenement extends Model
     public function commentaires() {
         return $this->hasMany(Commentaire::class);
     }
+    public function agence() {
+        return $this->belongsTo(Agence::class);
+    }
+  public function etat()
+  {
+      return $this->belongsTo(Etat::class);
+  }
+    
+   
 }

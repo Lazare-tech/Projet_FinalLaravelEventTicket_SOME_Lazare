@@ -3,7 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-USE App\Http\Controllers\EvenementController;
+uSE App\Http\Controllers\EvenementController;
+uSE App\Http\Controllers\BilletController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +33,18 @@ Route::middleware('auth')->group(function () {
 Route::get('create-evenement',[EvenementController::class, 'create'])->name('agence.create-evenement');
 Route::post('/ajouter/traitement',[EvenementController::class, 'ajouter_traitement']);
 
-Route::get('evenement',[EvenementController::class, 'evenement']);
+Route::get('evenement',[EvenementController::class, 'evenement'])->name('agence.evenement');
 
+Route::get('/update-evenement/{id}',[EvenementController::class, 'update_evenement'])->name('agence.update');
+Route::post('/update-evenement/traitement',[EvenementController::class, 'update_evenement_traitement']);
+
+Route::get('/delete-evenement/{id}',[EvenementController::class, 'delete_evenement']);
+//BILLET
+Route::get('billet',[BilletController::class, 'liste_billet'])->name('billet.liste');
+Route::get('create-billet',[BilletController::class, 'ajout_billet'])->name('billet.ajout');
+Route::post('ajout_billet/traitement',[BilletController::class, 'ajout_traitement_billet']);
+Route::get('/update-billet/{id}',[BilletController::class, 'update_billet'])->name('billet.update');
+Route::post('/update-billet/traitement',[BilletController::class, 'update_billet_traitement']);
+Route::get('/delete-billet/{id}',[BilletController::class, 'delete_billet']);
 
 require __DIR__.'/auth.php';

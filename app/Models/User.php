@@ -12,6 +12,7 @@ use App\Modeles\Commentaire;
 use App\Models\Commande;
 use App\Models\Entreprise;
 use App\Models\AgenceEvenementielle;
+use App\Models\Role;
 class User extends Authenticatable
 {
     use CrudTrait;
@@ -26,7 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role'
+        'role_id'
     ];
 
     /**
@@ -59,12 +60,15 @@ class User extends Authenticatable
     }
 
   
-    public function entreprises()
+ 
+    public function agence()
     {
-        return $this->belongsToMany(Entreprise::class);
+        return $this->hasOne(Agence::class);
     }
-    public function agences() {
-        return $this->morphToMany(AgenceEvenementielle::class, 'user', 'agence_user');
+    
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 
 

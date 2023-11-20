@@ -8,17 +8,23 @@ use App\Models\Timezone;
 use App\Models\Categorie;
 use App\Models\Agence;
 use Illuminate\Support\Facades\DB;;
-
+use App\Models\Etat;
 class EvenementController extends Controller
 {
     //
+    public function evenement()
+    {
+        $evenement= Evenement::all();
+        return view('agence.evenement',compact('evenement'));
+    }
     public function create()
     {
         $timezones = Timezone::Orderby('offset')->get();
         $categories= Categorie::all();
-        $users = DB::table('users')->where('role' , 'agence_evenementielle');
+        $users = DB::table('users')->where('role_id' , '2');
         $users= $users->get();
-        return view('agence.create-evenement',compact('timezones','categories','users'));
+        $etats= Etat::all();
+        return view('agence.create-evenement',compact('timezones','categories','users','etats'));
     }
     public function ajouter_traitement(Request $request)
     {
@@ -29,8 +35,8 @@ class EvenementController extends Controller
             'lieu' => 'required',
             'timezone' => 'required',
             'agence' => 'required',
-
-            'photo' => 'required',
+            'etat' => 'required',
+            'image' => 'required',
             'dateDebut' => 'required',
             'dateFin' => 'required',
             'resume' => 'required',
@@ -39,6 +45,7 @@ class EvenementController extends Controller
 
            
         ]);
+        // dd($request);
         $evenement= new Evenement();
 
                 
@@ -49,30 +56,110 @@ class EvenementController extends Controller
         $evenement->fuseau_horaire= $request->timezone;
 
         $evenement->agence_id= $request->agence;
+        $evenement->etat_id= $request->etat;
+
+        $evenement->date_debut= $request->dateDebut;
+        $evenement->date_fin= $request->dateFin;
+        $evenement->resume= $request->resume;
+        $evenement->description= $request->description;
+        
+      
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $imageName = time() . '.' . $image->getClientOriginalExtension();
+        //     $image->move(public_path('images'), $imageName);
+        //     $evenement->photo = $imageName;
+            
+        // }
+             
+        if ($request->hasFile('image')) {
+            // File is present, proceed with storing it
+            $image_path = $request->file('image')->store('image','public');
+            $evenement->photo = $image_path;
+        }
+
+        $evenement->save();
+        
+        return redirect('/evenement')->with('status', 'L\'evenement a bien ete enregister avec succes.');
+        
+    }
+    
+    //
+    public function update_evenement($id){
+        
+        $evenements= Evenement::find($id);
+        $timezones= Timezone::all();
+        $categories= Categorie::all();
+        $etats= Etat::all();
+        
+        
+        return view('agence.update',
+                    compact(
+                        
+                     'evenements',
+                        'timezones',
+                        'categories',
+                        'etats',
+                    ));
+        
+        
+    }
+    
+    public function update_evenement_traitement(Request $request){
+        $request->validate([
+            'nomEvenement' => 'required',
+            'type' => 'required',
+            'lieu' => 'required',
+            'timezone' => 'required',
+            // 'agence' => 'required',
+                'etat' =>'required',
+            'image' => 'required',
+            'dateDebut' => 'required',
+            'dateFin' => 'required',
+            'resume' => 'required',
+            'description' => 'required',
+
+
+           
+        ]);
+        $evenement=Evenement::find($request->id);
+        //
+       
+        //
+        $evenement->nom= $request->nomEvenement;
+        $evenement->categorie_id= $request->type;
+        $evenement->lieu= $request->lieu;
+        $evenement->etat_id= $request->etat;
+        $evenement->fuseau_horaire= $request->timezone;
+
+        // $evenement->agence_id= $request->agence;
         $evenement->date_debut= $request->dateDebut;
         $evenement->date_fin= $request->dateFin;
         $evenement->resume= $request->resume;
         $evenement->description= $request->description;
         
         
-        if ($request->hasFile('photo')) {
-            $image = $request->file('photo');
+       //
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images'), $imageName);
             $evenement->photo = $imageName;
             
         }
+        $evenement->update();
+        return redirect('/evenement')->with('status', 'L\'evenement a bien ete modifier avec succes.');
 
-
-
-        
-        $evenement->save();
-        
-        return redirect('/evenement')->with('status', 'L\'evenement a bien ete enregister avec succes.');
-        
     }
-    public function evenement()
-    {
-        return view('agence.evenement');
+     //delete function
+     public function delete_evenement($id){
+        
+        $evenement=Evenement::find($id);
+        $evenement->delete();
+        
+        return redirect('/evenement')->with('status', 'L\'evenement a bien ete suprimer avec succes.');
+
     }
+   
 }
