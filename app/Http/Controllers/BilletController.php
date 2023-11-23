@@ -12,13 +12,22 @@ class BilletController extends Controller
     //
     public function liste_billet()
     {
+        $user = auth()->user();
+        $agence= $user->agence;
+        //recupere tous les evenements liers a lagence
+        $evenements = $agence->evenements;
+        foreach($evenements as $evenements){
+            $billets= $evenements->billets;
+
+        }
+        //recupere les billet lie a levenement
+        // $billets= $evenements->with('billets')->get();
         
-        
-        $evenements= Evenement::all();
-        $billets = Billet::with('typebillet')->get();
+        // $evenements= Evenement::all();
+        // $billets = Billet::with('typebillet')->get();
         $typebillets= Typebillet::all();
-        return view('billet.liste',compact('evenements'
-                                           ,'billets'));
+        return view('billet.liste',compact(
+                                           'billets'));
     }
     public function ajout_billet()
         {
@@ -100,4 +109,41 @@ class BilletController extends Controller
         return redirect('/billet')->with('status', 'Le billet a bien ete suprimer avec succes.');
 
     }
+    //detail evenement
+    public function detail_evenement($id)
+    {
+        $evenements = Evenement::find($id);
+        $billets = Billet::where('evenement_id', $id)->get();
+
+        return view('evenement.detail',compact('evenements','billets'));
+    }
+    //paiement
+    public function payer(Request $request)
+{
+    $user = auth()->user();
+
+   // Récupère les informations sélectionnées
+   $billetIds = $request->input('billet_id');
+   $billetQuantities = $request->input('quantity');
+   $billets = Billet::whereIn('id', $billetIds)->get();
+   
+   $montantTotal = 0;
+
+   foreach ($billets as $billet) {
+       $quantity = $billetQuantities[$billet->id];
+       $montantTotal += $billet->prix * $quantity;
+       $evenements = $billet->evenement;
+
+   }
+// dd($billets); 
+     // Enregistre l'achat
+    //  $achat = new Achat();
+    //  $achat->billet_ids = $billetIds;
+    //  $achat->billet_quantities = $billetQuantities;
+    //  $achat->montant_total = $montantTotal;
+     
+     return view('evenement.payer',compact('billets', 'billetQuantities', 'montantTotal','evenements','user'));
+}
+
+    
 }

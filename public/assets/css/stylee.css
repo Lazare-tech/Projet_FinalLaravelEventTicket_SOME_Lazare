@@ -1,0 +1,41 @@
+.card-img-top{
+    border: 3px solid #dee2e6;
+    background-color: white;
+}
+.displayy{
+    font-size: 5.5rem;
+    font-weight: 300;
+    color: red;
+}
+.display-2{
+    font-size: 5.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.text-right{
+    text-align: right;
+}
+.progress-bar{
+    height: 1rem;
+}
+.btn-block{
+    width: 100%;
+}
+.font-italic{
+    font-style: italic;
+}
+.text-capitalize{
+    font-size: 2.5rem;
+}
+.nav-link{
+    font-weight: 500;   
+
+}
+.nav-item{
+    padding: 10px;
+    color: red;
+}
+.pure,.web{
+    font-size: 6rem;
+    
+}

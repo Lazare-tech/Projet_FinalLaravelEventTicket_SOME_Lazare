@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 use App\Models\Evenement;
 use App\Models\Timezone;
@@ -9,14 +11,26 @@ use App\Models\Categorie;
 use App\Models\Agence;
 use Illuminate\Support\Facades\DB;;
 use App\Models\Etat;
+use App\Models\Billet;
+
 class EvenementController extends Controller
 {
     //
     public function evenement()
     {
-        $evenement= Evenement::all();
-        return view('agence.evenement',compact('evenement'));
+        
+        $user = auth()->user();
+        $agence= $user->agence;
+        // dd($agence);
+        
+            $evenement = $agence->evenements;
+            
+
+            return view('agence.evenement',compact('evenement'));
+
+            
     }
+    
     public function create()
     {
         $timezones = Timezone::Orderby('offset')->get();
@@ -161,5 +175,6 @@ class EvenementController extends Controller
         return redirect('/evenement')->with('status', 'L\'evenement a bien ete suprimer avec succes.');
 
     }
+     
    
 }

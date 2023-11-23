@@ -186,6 +186,7 @@
                         <th class="text-secondary opacity-7">Actions</th>
                       </tr>
                     </thead>
+                    
                     <tbody>
                         @foreach ($evenement as $evenement )
                       <tr>

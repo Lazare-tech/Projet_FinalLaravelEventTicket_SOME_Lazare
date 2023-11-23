@@ -24,11 +24,11 @@
   <link rel="stylesheet" href="{{ asset('assets/css/templatemo-grad-school.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
-  
-  <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+  <!-- Scripts -->
   <style>
 
   </style>
@@ -166,13 +166,14 @@
     <section class="container mt-0">
       <div class="row">
         <h5 class="text-white">Des <span class="text-warning fw-bold">billets</span> a porte de mains</h5>
-        <h3 class=""><span class="text-white">Decouvrez nos categories </span><span class="text-warning">de billets</span></h3>
+        <h3 class=""><span class="text-white">Decouvrez nos categories </span><span class="text-warning">de
+            billets</span></h3>
       </div>
     </section>
     <div class="container mt-5 catalogue_categorie ">
       <div class="row">
         <!-- Colonne 1 -->
-        <div class="col-md-5" >
+        <div class="col-md-5">
           <div class="card mb-4  categorie-evenement" style="background: #162238;">
             <!-- <div class="card-body">
                   Contenu de la carte 1
@@ -364,14 +365,16 @@
 
 
       <div class="row row-cols-1 row-cols-md-3 g-4 pb-4 pt-3 ">
-      @foreach ($evenements as $evenements )
-        
+        @foreach ($evenements as $evenements )
+
         <div class="col-lg-4 ">
           <div class="card card-evenement">
-            <img src="{{ asset('storage/' . $evenements->photo) }}" class="card-img-top card-evenement-photo" alt="Evenement" />
+            <img src="{{ asset('storage/' . $evenements->photo) }}" class="card-img-top card-evenement-photo"
+              alt="Evenement" />
 
             <div class="card-body">
-              <button class="voir_plus float-end plus"><i class="fas fa-plus"></i></button>
+              <a href="{{ route('detail', ['id' => $evenements->id ]) }}"><button class="voir_plus float-end plus"><i
+                    class="fas fa-plus"></i></button></a>
 
               <div class="it mt-4 mb-3">
                 <i class="fas fa-table fa-1x " style="color: #1f5135;"></i>
@@ -391,19 +394,20 @@
                 <span class="float-end">3000FCFA</span>
               </div>
             </div>
-             <!-- Add the label in the top-right corner -->
-             <div class="event-label">
+            <!-- Add the label in the top-right corner -->
+            <div class="event-label">
               <!-- You can customize the label text based on whether it's new or in a few days -->
               <span class="label-text">{{ $evenements->etat->nom }}</span>
             </div>
           </div>
         </div>
+
         @endforeach
 
-       
-       
-        </div>
-        
+
+
+      </div>
+
       </div>
 
       <div class="cover mt-1">
@@ -589,7 +593,7 @@
       <!-- Inner -->
     </div>
   </section>
-  
+
   <div class="b-example-divider " style="background: #162238;;"></div>
   <!-- Carousel wrapper -->
   @include('footer.footer')

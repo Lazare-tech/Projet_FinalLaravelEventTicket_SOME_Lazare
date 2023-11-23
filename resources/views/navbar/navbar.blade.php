@@ -10,25 +10,77 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse px-5" id="navbarScroll">
+      @auth
+      @if( auth()->user()->role_id == 2)
+   
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 
         <li class="nav-item">
-          <a class="nav-link active text-white fw-bold" aria-current="page" href="#">ACCEUIL</a>
+          <a class="nav-link active text-white fw-bold" aria-current="page" href="/home">ACCEUIL</a>
         </li>
       
         <li class="nav-item">
-          <a class="nav-link text-white fw-bold" href="#">A PROPOS</a>
+          <a class="nav-link text-white fw-bold" href="{{ route('menu.apropos') }}">A PROPOS</a>
+
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="{{  route('agence.create-evenement') }}">CREER UN EVENEMENT</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="{{ route('menu.contact') }}">CONTACTS</a>
+
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-bold" href="{{  route('agence.evenement') }}">CREER UN EVENEMENT</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white fw-bold" href="#">CONTACTS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white fw-bold" href="#">FAQ</a>
+          <a class="nav-link text-white fw-bold" href="{{ route('menu.faq') }}">FAQ</a>
+
         </li>
       </ul>
+      @elseif( auth()->user()->role_id != 2)
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+        <li class="nav-item">
+          <a class="nav-link active text-white fw-bold" aria-current="page" href="/home">ACCEUIL</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="{{ route('menu.apropos') }}">A PROPOS</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="{{ route('menu.contact') }}">CONTACTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="{{ route('menu.faq') }}">FAQ</a>
+        </li>
+
+      </ul>
+      @endif
+
+      @endauth
+      @guest
+        
+      
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+        <li class="nav-item">
+          <a class="nav-link active text-white fw-bold" aria-current="page" href="/home">ACCEUIL</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="{{ route('menu.apropos') }}">A PROPOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="{{ route('menu.contact') }}">CONTACTS</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="{{ route('menu.faq') }}">FAQ</a>
+
+        </li>
+      </ul>
+     @endguest
 
        <div class="">
         @if (Route::has('login'))
