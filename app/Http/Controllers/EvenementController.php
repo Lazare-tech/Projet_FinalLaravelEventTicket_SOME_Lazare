@@ -25,6 +25,7 @@ class EvenementController extends Controller
         
             $evenement = $agence->evenements;
             
+            
 
             return view('agence.evenement',compact('evenement'));
 

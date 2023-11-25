@@ -46,7 +46,7 @@
       <img src="../images/istockphoto-1482176963-612x612.jpg" alt="" class="i">
     </div> --}}
 
-    <video autoplay muted loop id="bg-video">
+    <video autoplay muted loop id="bg-video-detail">
       <source src="assets/images/production_id_4440815 (1080p).mp4" type="video/mp4" />
     </video>
 

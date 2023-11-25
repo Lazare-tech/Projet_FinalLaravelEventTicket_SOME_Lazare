@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 uSE App\Http\Controllers\EvenementController;
 uSE App\Http\Controllers\BilletController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\AgenceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use App\Http\Controllers\MenuController;
 |
 */
 
-Route::get('/home',[HomeController::class, 'index'])->name('index');
+Route::get('/',[HomeController::class, 'index'])->name('index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -56,6 +57,15 @@ Route::post('/evenement/payer/',[BilletController::class, 'payer'])->name('evene
 Route::get('/contact',[MenuController::class, 'contact'])->name('menu.contact');
 Route::get('/faq',[MenuController::class, 'faq'])->name('menu.faq');
 Route::get('/apropos',[MenuController::class, 'apropos'])->name('menu.apropos');
+//AGENCE
+Route::get('/liste-agence',[AgenceController::class, 'agence'])->name('agence.liste-agence');
+
+Route::get('/create-agence',[AgenceController::class, 'create_agence'])->name('agence.create-agence');
+Route::post('/create-agence/traitement',[AgenceController::class, 'create_agence_traitement'])->name('agence.create-agence-traitement');
+
+Route::get('/update-agence/{id}',[AgenceController::class, 'update_agence'])->name('agence.update');
+Route::post('/update-agence/traitement',[AgenceController::class, 'update_agence_traitement']);
+Route::get('/delete-agence/{id}',[AgenceController::class, 'delete_agence']);
 
 
 require __DIR__.'/auth.php';

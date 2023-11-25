@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset ('assets/ass/img/apple-icon.png') }}">
   <link rel="icon" type="image/png" href="{{ asset ('assets/ass/img/favicon.png') }}">
   <title>
-    Liste billet
+    Dashboard
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -35,6 +35,8 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="{{asset ('assets/ass/css/material-dashboard.css') }}" rel="stylesheet" />
 <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -47,59 +49,68 @@
     <div class="container-fluid py-4">
         <div class="row">
           <div class="col-12">
-            <div class="card my-4">
+            <div class="card my-4 ">
               <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                  <h6 class="text-white text-capitalize ps-3">Billets</h6>
+                  <h6 class="text-white text-capitalize ps-3">Evenements</h6>
                 </div>
               </div>
+
               <div class="card-body px-0 pb-2">
+                <a href="{{ route('agence.create-evenement') }}" ><button class="btn btn-primary">Creer votre evenement</button></a>
+
                 <div class="table-responsive p-0">
-                <a href="{{ route('billet.ajout') }}"><button class="btn btn-primary">Creer un billet</button></a>
-                  
-            @if (session('status'))
-            <div class="alert alert-success">
-              {{ session('status') }}
-            </div>
-            @endif
+                
                   <table class="table align-items-center mb-0">
+                  
                     <thead>
                       <tr>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Evenement</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Prix</th>
-
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Typebillet</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Contact</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adresse</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
 
                         <th class="text-secondary opacity-7">Actions</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      @foreach ($billets as $billet )
-                    <tr>
-                      <td>
-                      
-                            <img src="{{ asset('storage/' . $billet->photo) }}" class="" style="width: 80px;height:80px;border-radius: 50%;" alt="billet">
-                            
-                      </td>
                     
-                      <td>
-                        {{ $billet->evenement->nom }}
-                      </td>
-                      <td>
-                        {{ $billet->prix }}
-                      </td>
-                      <td>
-                        {{ $billet->typebillet->typebillet}}
-                      </td>
-                      <td>
-                          <a href="/update-billet/{{ $billet->id }}" class="btn btn-primary">Update</a>
-                          <a href="/delete-billet/{{ $billet->id }}" class="btn btn-danger">Delete</a>
-        
+                    <tbody>
+      
+                       @if (session('status'))
+                      <div class="alert alert-success">
+                        {{ session('status') }}
+                        </div>
+                    @endif
+                      <tr>
+                        
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0">{{ $agence->nom }}</p>
                         </td>
-                    </tr>
-                 @endforeach
-                  </tbody>
+                        <td class="align-middle text-center text-sm">
+                          <p class="text-xs font-weight-bold mb-0">{{ $agence->contact }}</p>
+
+                        </td>
+                        <td class="align-middle text-center">
+                          <p class="text-xs font-weight-bold mb-0">{{ $agence->adresse }}</p>
+
+                        </td>
+                        <td class="align-middle text-center">
+                            <p class="text-xs font-weight-bold mb-0">{{ $agence->email}}</p>
+  
+                          </td>
+                          <td class="align-middle text-center">
+                            <p class="text-xs font-weight-bold mb-0">{{ $agence->description}}</p>
+  
+                          </td>
+                     
+                        <td>
+                            <a href="/update-agence/{{ $agence->id }}" class="btn btn-primary">Update</a>
+                            <a href="/delete-agence/{{ $agence->id }}" class="btn btn-danger">Delete</a>
+          
+                          </td>
+                      </tr>
+                        </tbody>
                   </table>
                 </div>
               </div>

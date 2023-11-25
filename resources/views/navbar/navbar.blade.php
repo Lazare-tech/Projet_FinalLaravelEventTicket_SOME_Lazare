@@ -16,18 +16,22 @@
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 
         <li class="nav-item">
-          <a class="nav-link active text-white fw-bold" aria-current="page" href="/home">ACCEUIL</a>
+          <a class="nav-link active text-white fw-bold" aria-current="page" href="/">ACCEUIL</a>
         </li>
       
         <li class="nav-item">
           <a class="nav-link text-white fw-bold" href="{{ route('menu.apropos') }}">A PROPOS</a>
 
         </li>
-       
+          @if(auth()->user()->agence)
         <li class="nav-item">
           <a class="nav-link text-white fw-bold" href="{{  route('agence.create-evenement') }}">CREER UN EVENEMENT</a>
         </li>
-       
+        @else
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="{{  route('agence.create-agence') }}">CREER UN EVENEMENT</a>
+        </li>
+        @endif   
         <li class="nav-item">
           <a class="nav-link text-white fw-bold" href="{{ route('menu.contact') }}">CONTACTS</a>
 
@@ -41,7 +45,7 @@
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 
         <li class="nav-item">
-          <a class="nav-link active text-white fw-bold" aria-current="page" href="/home">ACCEUIL</a>
+          <a class="nav-link active text-white fw-bold" aria-current="page" href="/">ACCEUIL</a>
         </li>
       
         <li class="nav-item">
@@ -65,7 +69,7 @@
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 
         <li class="nav-item">
-          <a class="nav-link active text-white fw-bold" aria-current="page" href="/home">ACCEUIL</a>
+          <a class="nav-link active text-white fw-bold" aria-current="page" href="/">ACCEUIL</a>
         </li>
       
         <li class="nav-item">
