@@ -23,6 +23,11 @@
           <a class="nav-link text-white fw-bold" href="{{ route('menu.apropos') }}">A PROPOS</a>
 
         </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="/evenement_liste">EVENEMENT</a>
+
+        </li>
+        
           @if(auth()->user()->agence)
         <li class="nav-item">
           <a class="nav-link text-white fw-bold" href="{{  route('agence.create-evenement') }}">CREER UN EVENEMENT</a>
@@ -41,6 +46,7 @@
 
         </li>
       </ul>
+      
       @elseif( auth()->user()->role_id != 2)
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 
@@ -91,16 +97,26 @@
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
             <div class="d-flex align-items-center">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    <button class="bouton text-white pt-2">
-                        {{ Auth::user()->name }}
-                    </button>
-                </x-responsive-nav-link>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button class="se_deconnecter pt-2">{{ __('Deconnexion') }}</button>
-                </form>
-            </div>
+              <div class="dropdown">
+                  <button class="bouton text-white pt-2" onclick="toggleDropdown()">
+                      {{ Auth::user()->name }} <i class="fas fa-caret-down"></i>
+                  </button>
+          
+                  <!-- Dropdown menu -->
+                  <div id="dropdownMenu" class="dropdown-menu">
+                      <form method="POST" action="{{ route('logout') }}">
+                          @csrf
+                        
+                          <button class="dropdown-item" type="submit">
+                            {{ __('Deconnexion') }}
+                        </button>
+                      </form>
+                      <a href="{{ route('agence.dashboard_agence') }}"><button class="dropdown-item">
+                        {{ __('Dashboard') }}
+                    </button></a>
+                  </div>
+              </div>
+          </div>
             @else
             <a href="{{ route('login') }}"><button class="se_connecter text-white">Se connecter</button></a>
             @if (Route::has('register'))

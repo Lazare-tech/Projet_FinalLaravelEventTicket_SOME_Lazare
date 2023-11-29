@@ -33,6 +33,11 @@
         <!-- Scripts -->
   <style>
 
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/contact.jpg), no-repeat center center;
+    background-size: cover;
+    height: 70vh;
+  }
 
   </style>
 </head>
@@ -42,22 +47,19 @@
 
  
   <!-- ***** Main Banner Area Start ***** -->
-  <section class="section main-banner" id="top" data-section="section1">
-    <video autoplay muted loop id="bg-video">
-      <source src="assets/images/production_id_4440815 (1080p).mp4" type="video/mp4" />
-    </video>
-    <div class="video-overlay header-text">
-      <div class="caption">
-        <h6>Decouvrez l'Experience Ultime</h6>
-        <h2><em>L'endroit ideal</em>pour l'evenementiel</h2>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href="#trouver-evenement"><button type="button"
-              class=" btn-lg px-4 text-white fw-bold gap-3 trouvez_des_evenement">Trouvez des evenements</button></a>
-          <button type="button" class="px-4 text-dark creez_un_evenement fw-bold">Achetez un billet</button>
+   <div class="container-fluid page-header ">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-5 text-white text-center pt-5">Contact</h3>
+                <h3 class="text-white text-center">Nous sommes disposer a vous ecouter</h3>
+                <div class="d-inline-flex text-white">
+                    {{-- <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Contact</p> --}}
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
   <!-- ***** Main Banner Area End ***** -->
 <!-- form contact -->
 <section class="section contact" data-section="section6">
@@ -65,26 +67,36 @@
       <div class="row justify-content-center">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2>Nous contacter</h2>
+            <a href="#nous_contacter"><h2>Nous contacter</h2><a href=""></a>
           </div>
         </div>
-        <div class="col-md-8">
-          <form id="contact" action="" method="post">
+        <div class="col-md-8" id="nous_contacter">
+          <form id="contact" action="/contact/traitement" method="post">
             <div class="row">
               <div class="col-md-8">
                   <fieldset>
-                    <input name="name" type="text" class="form-control" id="name" placeholder="Votre nom" required="">
+                    <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name" placeholder="Votre nom">
+                  
                   </fieldset>
+                  @if($errors->has('name'))
+                  <span class="invalid-feedback">{{ $errors->first('name') }}</span>
+                  @endif
                 </div>
                 <div class="col-md-8">
                   <fieldset>
-                    <input name="email" type="text" class="form-control" id="email" placeholder="Email" required="">
+                    <input name="email" type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"" id="email" placeholder="Email" >
                   </fieldset>
+                  @if($errors->has('email'))
+                  <span class="invalid-feedback">{{ $errors->first('email') }}</span>
+                  @endif
                 </div>
               <div class="col-md-12">
                 <fieldset>
-                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Ecrivez votre message..." required=""></textarea>
+                  <textarea name="message" rows="6" class="form-control {{ $errors->has('message') ? 'is-invalid' : '' }}"" id="message" placeholder="Ecrivez votre message..." ></textarea>
                 </fieldset>
+                @if($errors->has('message'))
+                <span class="invalid-feedback">{{ $errors->first('message') }}</span>
+                @endif
               </div>
               <div class="col-md-12">
                 <fieldset>

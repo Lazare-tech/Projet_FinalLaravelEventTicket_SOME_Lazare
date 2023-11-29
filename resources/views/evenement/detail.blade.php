@@ -97,9 +97,8 @@
             mollit aliquip ad.
 
           </p>
-          <button class="acheter">Acheteter</button>
           <button type="button" class="acheter" data-bs-toggle="modal" data-bs-target="#exampleModal"
-            data-bs-whatever="@mdo">Open modal for @mdo</button>
+            data-bs-whatever="@mdo">Acheter maintenant</button>
           <form action="{{ route('evenement.payer') }}" method="POST">
             @csrf
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"

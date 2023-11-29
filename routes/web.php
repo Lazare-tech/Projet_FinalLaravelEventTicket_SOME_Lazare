@@ -32,6 +32,9 @@ Route::middleware('auth')->group(function () {
 });
 
 //EVENEMENT
+Route::get('dashboard',[EvenementController::class, 'dashboard_agence'])->name('agence.dashboard_agence');
+Route::get('/evenement_liste',[EvenementController::class, 'evenement_page']);
+
 Route::get('create-evenement',[EvenementController::class, 'create'])->name('agence.create-evenement');
 Route::post('/ajouter/traitement',[EvenementController::class, 'ajouter_traitement']);
 
@@ -55,6 +58,7 @@ Route::post('/evenement/payer/',[BilletController::class, 'payer'])->name('evene
 
 //MENU
 Route::get('/contact',[MenuController::class, 'contact'])->name('menu.contact');
+Route::post('/contact/traitement',[ContactController::class, 'contact']);
 Route::get('/faq',[MenuController::class, 'faq'])->name('menu.faq');
 Route::get('/apropos',[MenuController::class, 'apropos'])->name('menu.apropos');
 //AGENCE

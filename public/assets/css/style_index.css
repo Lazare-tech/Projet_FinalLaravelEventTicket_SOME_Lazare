@@ -393,3 +393,41 @@ button {
 .commentaire{
   color: white;
 }
+/* CONTACT ABOUT PARTY */
+
+.section.lb {
+  background-color: #f2f3f5;
+}
+
+
+
+
+
+
+.customwidget{
+margin-top: 30px;
+}
+
+.hmv-box{
+padding: 60px 0px; 
+}
+.inner-hmv{
+padding: 15px;
+box-shadow: 0 0px 10px rgba(0,0,0,.1);
+position: relative;
+overflow: hidden;
+}
+.icon-box-hmv{
+width: 100px;
+height: 100px;
+line-height: 100px;
+text-align: center;
+border: 3px solid #4babb1;
+border-radius: 6px;
+margin-bottom: 20px;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+-o-transition: all 0.3s;
+transition: all 0.3s;
+}
+

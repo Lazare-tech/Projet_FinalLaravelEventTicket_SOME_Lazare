@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/templatemo-grad-school.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -614,6 +615,27 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+
+  <script>
+    function toggleDropdown() {
+        var dropdownMenu = document.getElementById('dropdownMenu');
+        dropdownMenu.classList.toggle('show');
+    }
+
+    // Fermer le dropdown si l'utilisateur clique en dehors de celui-ci
+    window.onclick = function(event) {
+        if (!event.target.matches('.bouton')) {
+            var dropdowns = document.getElementsByClassName('dropdown-menu');
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
 </body>
 
 </html>

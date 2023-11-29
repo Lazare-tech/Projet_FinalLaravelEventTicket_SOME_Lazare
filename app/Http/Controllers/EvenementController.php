@@ -27,11 +27,21 @@ class EvenementController extends Controller
             
             
 
-            return view('agence.evenement',compact('evenement'));
+            return view('agence.evenement_liste',compact('evenement'));
 
             
     }
-    
+    //
+    public function dashboard_agence()
+    {
+        return view('dashboard.dashboard_agence');
+    }
+    //
+    public function evenement_page()
+    {
+        $evenements= Evenement::all();
+        return view('evenement.evenement_liste',compact('evenements'));
+    }
     public function create()
     {
         $timezones = Timezone::Orderby('offset')->get();
