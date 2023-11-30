@@ -75,6 +75,7 @@
                       </tr>
                     </thead>
                     <tbody>
+                    
                       @foreach ($billets as $billet )
                     <tr>
                       <td>

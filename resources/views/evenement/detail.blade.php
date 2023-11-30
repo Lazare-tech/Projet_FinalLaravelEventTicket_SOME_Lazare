@@ -34,6 +34,7 @@
   <style>
 
 
+
   </style>
 </head>
 
@@ -41,27 +42,18 @@
   @include('navbar.navbar')
 
   <!-- ***** Main Banner Area Start ***** -->
-  <section class="section main-banner" id="top" data-section="section1">
-    {{-- <div class="container-fluid" id="bg-video">
-      <img src="../images/istockphoto-1482176963-612x612.jpg" alt="" class="i">
-    </div> --}}
 
-    <video autoplay muted loop id="bg-video-detail">
-      <source src="assets/images/production_id_4440815 (1080p).mp4" type="video/mp4" />
+  <section class="section main-banner" id="top" data-section="section1" style="height:50vh">
+    <video autoplay muted loop id="bg-video">
+      <source src="images/production_id_4440815 (1080p).mp4" type="video/mp4" />
     </video>
 
+   
     <div class="video-overlay header-text">
       <div class="caption">
-        <h2>plonger dans une atmosphère unique.</h2>
-        <h6>Bienvenue à l'événement exclusif</h6>
+        <h3 class="plonger">plonger dans une atmosphère unique.</h3>
         <h2><em>{{ $evenements->nom }}</em></h2>
 
-        {{--
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href="#trouver-evenement"><button type="button"
-              class=" btn-lg px-4 text-white fw-bold gap-3 trouvez_des_evenement">Trouvez des evenements</button></a>
-          <button type="button" class="px-4 text-dark creez_un_evenement fw-bold">Achetez un billet</button>
-        </div> --}}
       </div>
     </div>
   </section>

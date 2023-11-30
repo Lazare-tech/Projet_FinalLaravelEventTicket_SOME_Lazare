@@ -13,22 +13,30 @@ class BilletController extends Controller
     public function liste_billet()
     {
         $user = auth()->user();
-        $agence= $user->agence;
-        //recupere tous les evenements liers a lagence
-        $evenements = $agence->evenements;
-        foreach($evenements as $evenements){
-            $billets= $evenements->billets;
-
-        }
-        //recupere les billet lie a levenement
-        // $billets= $evenements->with('billets')->get();
         
-        // $evenements= Evenement::all();
-        // $billets = Billet::with('typebillet')->get();
-        $typebillets= Typebillet::all();
-        return view('billet.liste',compact(
-                                           'billets'));
+        // Vérifie si l'utilisateur et son agence existent
+        if ($user && $user->agence) {
+            $agence = $user->agence;
+            
+            // Récupère tous les événements liés à l'agence
+            $evenements = $agence->evenements;
+    
+            foreach ($evenements as $evenement) {
+                $billets = $evenement->billets;
+    
+                // Traitement des billets...
+            }
+    
+            $typebillets = Typebillet::all();
+    
+            return view('billet.liste', compact('billets'));
+        } else {
+            // Gérer le cas où l'agence n'est pas définie
+            // Vous pouvez rediriger l'utilisateur, afficher un message d'erreur, etc.
+            return redirect('/create-billet')->with('status','Pas en encore de billet? crez-en');
+        }
     }
+    
     public function ajout_billet()
         {
             $evenements= Evenement::all();

@@ -13,7 +13,7 @@
   <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/jumbotrons.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/featuresIconGrid.css')  }}">
-  
+
   <link rel="stylesheet" href="">
 
   <!-- Bootstrap core CSS -->
@@ -26,12 +26,17 @@
   <link rel="stylesheet" href="{{ asset('assets/css/templatemo-grad-school.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
-  
-  <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+  <!-- Scripts -->
   <style>
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/paiement.webp), no-repeat center center;
+    background-size: cover;
+    height: 60vh;
+  }
 
 
   </style>
@@ -41,80 +46,103 @@
   @include('navbar.navbar')
 
   <!-- ***** Main Banner Area Start ***** -->
-<section class="section main-banner" id="top" data-section="section1">
-
-    
-    <video autoplay muted loop id="bg-video" class="">
-      <source src="assets/images/production_id_4440815 (1080p).mp4" type="video/mp4" />
-    </video> 
-
-    <div class="video-overlay header-text">
-      <div class="caption">
-        <h6 >Achat De Billet</h6>
-      
-      </div>
+  <div class="container-fluid page-header ">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class=" text-white text-center pt-5">Obtenez votre billet maintenant</h3>
+            <h3 class="text-white text-center">Votre partenaire pour des événements inoubliables</h3>
+            <!-- Ajoutez une description supplémentaire si nécessaire -->
+            <div class="d-inline-flex text-white">
+                {{-- <p class="m-0 text-uppercase"><a class="text-white" href="">Accueil</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Contact</p> --}}
+            </div>
+        </div>
     </div>
-  </section>
+</div>
   <!-- ***** Main Banner Area End ***** -->
   <section class="container">
+  <div class="row">
   
-<table class="table">
-    <thead>
-      <tr>
-        <th>Billet</th>
-        <th>Quantité</th>
-        <th>Prix unitaire</th>
-        <th>Montant total</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            @foreach ($billets as $billet)
-            <tr>
-              <td>{{ $billet->typebillet->typebillet }}</td>
-              <td>{{ $billetQuantities[$billet->id] }}</td>
-              <td>{{ $billet->prix }} FCFA</td>
-              <td>{{ $billetQuantities[$billet->id] * $billet->prix }} FCFA</td>
-            </tr>
-            @endforeach
-       </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-          <td colspan="3">Total</td>
-          <td>{{ $montantTotal }} FCFA</td>
-        </tr>
-      </tfoot>
-      
-  </table>
-  
-  <div class="mt-3">
-    <h5>Options de paiement</h5>
-    <div class="form-check">
-      <input type="radio" class="form-check-input" id="option-paiement-orange" name="option_paiement" value="orange">
-      <label class="form-check-label" for="option-paiement-orange">Orange Money</label>
-    </div>
-    <div class="form-check">
-      <input type="radio" class="form-check-input" id="option-paiement-momo" name="option_paiement" value="momo">
-      <label class="form-check-label" for="option-paiement-momo">Mobile Money</label>
-    </div>
-  </div>
-  
-  <form class="mt-3">
-    <div class="mb-3">
-      <label for="nom" class="form-label">Nom complet:</label>
-      <input type="text" class="form-control" id="nom" name="nom" value="{{ $user->name }}" readonly>
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Adresse e-mail:</label>
-      <input type="email" class="form-control" id="email" name="email"  value="{{ $user->email }}" readonly>
-    </div>
-    <button type="submit" class="btn btn-primary">Payer</button>
-  </form>
+    <div class="col-lg-6">
     
+      <form class="mt-3">
+        <div class="mb-3">
+          <label for="nom" class="form-label">Nom complet:</label>
+          <input type="text" class="form-control" id="nom" name="nom" value="{{ $user->name }}" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Adresse e-mail:</label>
+          <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" readonly>
+        </div>
+        <button type="submit" class="btn btn-primary">Payer</button>
+      </form>
+    </div>
+    <div class="col-lg-6 mt-5">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Billet</th>
+            <th>Quantité</th>
+            <th>Prix unitaire</th>
+            <th>Montant total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            @foreach ($billets as $billet)
+          <tr>
+            <td>{{ $billet->typebillet->typebillet }}</td>
+            <td>{{ $billetQuantities[$billet->id] }}</td>
+            <td>{{ $billet->prix }} FCFA</td>
+            <td>{{ $billetQuantities[$billet->id] * $billet->prix }} FCFA</td>
+          </tr>
+          @endforeach
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class=""><strong>Total</strong></td>
+            <td><strong>{{ $montantTotal }} FCFA</strong></td>
+          </tr>
+        </tfoot>
+  
+      </table>
+    </div>
+      
+    </div>
+  
+  </div>
+   
+
+    <section class="container">
+
+      <div class="row mb-3">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6 ">
+
+          <div class="">
+            <h5>Options de paiement</h5>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="option-paiement-orange" name="option_paiement"
+                value="orange">
+              <label class="form-check-label" for="option-paiement-orange">Orange Money</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="option-paiement-momo" name="option_paiement"
+                value="momo">
+              <label class="form-check-label" for="option-paiement-momo">Mobile Money</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
   </section>
 
-  
+
   <div class="b-example-divider " style="background: #162238;;"></div>
   <!-- Carousel wrapper -->
   @include('footer.footer')

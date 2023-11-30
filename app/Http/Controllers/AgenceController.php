@@ -10,10 +10,20 @@ class AgenceController extends Controller
     //
     public function agence()
     {
-        $user= auth()->user();
-        $agence = $user->agence;
-        return view('agence.liste-agence',compact('agence'));
+        $user = auth()->user();
+        
+        // V si l'utilisateur a une agence
+        if ($user->agence) {
+            // Si l'utilisateur a une agence, récupérez cette agence spécifique
+            $agence = [$user->agence];
+        } else {
+            // Sinon, l'utilisateur n'a pas d'agence
+            $agence = [];
+        }
+    
+        return view('agence.liste-agence', compact('agence'));
     }
+    
     //
     public function create_agence()
     {
@@ -75,13 +85,13 @@ class AgenceController extends Controller
 
     }
     //DELETE
-    // public function delete_agence($id)
-    // {
-    //     $agence = Agence::find($id);
-    //     $agence->delete();
+    public function delete_agence($id)
+    {
+        $agence = Agence::find($id);
+        $agence->delete();
         
-    //     return redirect('/liste-agence')->with('status', 'Agence a bien ete suprimer avec succes.');
+        return redirect('/liste-agence')->with('status', 'Agence a bien ete suprimer avec succes.');
 
         
-    // }
+    }
 }

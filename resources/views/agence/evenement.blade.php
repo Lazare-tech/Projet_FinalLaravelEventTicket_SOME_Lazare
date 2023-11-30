@@ -81,7 +81,9 @@
                         {{ session('status') }}
                       </div>
                     @endif
-                    
+                         @if(auth()->user()->agence && auth()->user()->agence->evenements->count() > 0)
+
+
                         @foreach ($evenement as $evenement )
                       <tr>
                         <td>
@@ -123,6 +125,11 @@
                           </td>
                       </tr>
                    @endforeach
+                   @else 
+                   <div class="alert alert-success">
+                    Creer votre evenement
+                    </div> 
+                    @endif
                     </tbody>
                   </table>
                 </div>

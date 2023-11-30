@@ -57,7 +57,7 @@
               </div>
 
               <div class="card-body px-0 pb-2">
-                <a href="{{ route('agence.create-evenement') }}" ><button class="btn btn-primary">Creer votre evenement</button></a>
+                <a href="{{ route('agence.create-agence') }}" ><button class="btn btn-primary">Creer le ptofile de votre agence</button></a>
 
                 <div class="table-responsive p-0">
                 
@@ -74,14 +74,16 @@
                         <th class="text-secondary opacity-7">Actions</th>
                       </tr>
                     </thead>
-                    
                     <tbody>
       
                        @if (session('status'))
-                      <div class="alert alert-success">
+                     <div class="alert alert-success">
                         {{ session('status') }}
-                        </div>
+                        </div> 
                     @endif
+                    @if (auth()->user()->agence)
+                        @foreach ($agence as $agence)
+                          
                       <tr>
                         
                         <td>
@@ -110,6 +112,13 @@
           
                           </td>
                       </tr>
+                      @endforeach
+
+                      @else
+                      <div class="alert alert-success">
+                        Creer votre profile agence
+                        </div> 
+                        @endif
                         </tbody>
                   </table>
                 </div>

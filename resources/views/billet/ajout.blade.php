@@ -90,7 +90,12 @@
                 </div>
               </div>
               <div class="card-body px-0 pb-2">
-                  
+                          
+            @if (session('status'))
+            <div class="alert alert-success">
+              {{ session('status') }}
+            </div>
+            @endif
                 <div class="step-container">
                     <form action="ajout_billet/traitement" method="POST" enctype="multipart/form-data">
                         @csrf

@@ -86,6 +86,8 @@
   
       <div class="container-fluid mt-4">
         <!-- Section 1: Bienvenue -->
+        @if(auth()->user()->agence && auth()->user()->agence->evenements->count() > 0)  
+
         <div class="row">
           <div class="col-lg-12">
             <h1 class="display-5">Bienvenue sur EasyTicket Dashboard</h1>
@@ -130,6 +132,14 @@
             <!-- Ajoutez ici des graphiques ou des statistiques pour mettre en avant les données clés -->
           </div>
         </div>
+        @else
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="display-5">Bienvenue sur EasyTicket Dashboard</h1>
+            <p class="lead">Trouvez et participez aux événements passionnants près de chez vous.</p>
+          </div>
+        </div>
+        @endif
       </div>
     </main>
   

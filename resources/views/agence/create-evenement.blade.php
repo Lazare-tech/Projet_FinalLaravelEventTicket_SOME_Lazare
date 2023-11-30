@@ -148,7 +148,7 @@
                          </div>
                         </div>
                         <div class="row pt-4">
-                          <div class="col-lg-6">
+                          <div class="col-lg-12">
                              <label for="Heure" class="form-label text-muted">Heure</label>
                             <select class="form-control mb-2 {{ $errors->has('timezone') ? 'is-invalid' : '' }}" name="timezone">
                               <option value="">Please select...</option>
@@ -160,20 +160,7 @@
                             <span class="invalid-feedback">{{ $errors->first('timezone') }}</span>
                             @endif
                           </div>
-                          <div class="col-lg-6">
-                            <label for="Heure" class="form-label text-muted">Agence</label>
-                           <select class="form-control mb-2 {{ $errors->has('agence') ? 'is-invalid' : '' }}" name="agence">
-                             <option value="">Please select agence</option>
-                             @foreach($users as $user)
-                             <option value="{{ $user->id }}">{{ $user->name }} </option>
-                             @endforeach
-                           </select>
-                           @if($errors->has('agence'))
-      
-                           <span class="invalid-feedback">{{ $errors->first('agence') }}</span>
-                           @endif
-                         </div>
-                          
+                         
                         </div>
                         <div class="row pt-4">
                           <div class="col">

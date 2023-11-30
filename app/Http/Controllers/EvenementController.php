@@ -23,11 +23,11 @@ class EvenementController extends Controller
         $agence= $user->agence;
         // dd($agence);
         
-            $evenement = $agence->evenements;
+            $evenement = Evenement::all();
             
             
 
-            return view('agence.evenement_liste',compact('evenement'));
+            return view('agence.evenement',compact('evenement'));
 
             
     }
@@ -53,13 +53,13 @@ class EvenementController extends Controller
     }
     public function ajouter_traitement(Request $request)
     {
-        
+        $user= auth()->user();
+        $agence= $user->agence;
         $request->validate([
             'nomEvenement' => 'required',
             'type' => 'required',
             'lieu' => 'required',
             'timezone' => 'required',
-            'agence' => 'required',
             'etat' => 'required',
             'image' => 'required',
             'dateDebut' => 'required',
@@ -80,7 +80,7 @@ class EvenementController extends Controller
 
         $evenement->fuseau_horaire= $request->timezone;
 
-        $evenement->agence_id= $request->agence;
+        $evenement->agence_id= $agence->id;
         $evenement->etat_id= $request->etat;
 
         $evenement->date_debut= $request->dateDebut;

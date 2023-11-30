@@ -21,6 +21,76 @@
           <span class="nav-link-text ms-1">Dashboard</span>
         </a>
       </li>
+            @if(auth()->user()->agence && auth()->user()->agence->evenements->count() > 0)  
+
+      <li class="nav-item">
+        <a class="nav-link text-white " href="/">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="material-icons opacity-10">home</i>
+          </div>
+          <span class="nav-link-text ms-1">Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white " href="/profile">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="material-icons opacity-10">person</i>
+          </div>
+          <span class="nav-link-text ms-1">Profile</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white " href="{{ route('agence.liste-agence') }}">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-building"></i>
+          </div>
+          <span class="nav-link-text ms-1">Agence</span>
+        </a>
+      </li>
+    
+      {{-- @if(auth()->user()->agence && auth()->user()->agence->evenements->count() > 0) --}}
+ 
+
+      <li class="nav-item">
+        <a class="nav-link text-white " href="{{ route('agence.evenement') }}">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="material-icons opacity-10">event</i>
+          </div>
+          <span class="nav-link-text ms-1">Evenement</span>
+        </a>
+      </li>
+      {{-- @if(auth()->user()->agence && auth()->user()->agence->evenements->count() > 0)  --}}
+
+      <li class="nav-item">
+        <a class="nav-link text-white " href="{{ route('billet.liste') }}">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="material-icons opacity-10">receipt_long</i>
+          </div>
+          <span class="nav-link-text ms-1">Billet</span>
+        </a>
+      </li>
+      {{-- @else
+      <li class="nav-item">
+        <a class="nav-link text-white " href="{{ route('agence.create-evenement') }}">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="material-icons opacity-10">event</i>
+          </div>
+          <span class="nav-link-text ms-1">Evenement</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white " href="{{ route('billet.ajout') }}">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="material-icons opacity-10">receipt_long</i>
+          </div>
+          <span class="nav-link-text ms-1">Billet</span>
+        </a>
+      </li>
+      @endif --}}
+
+    
+    
+      @else
       <li class="nav-item">
         <a class="nav-link text-white " href="/">
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -39,52 +109,6 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link text-white " href="{{ route('agence.liste-agence') }}">
-          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="fas fa-building"></i>
-          </div>
-          <span class="nav-link-text ms-1">Agence</span>
-        </a>
-      </li>
-      @if(auth()->user()->agence && auth()->user()->agence->evenements->count() > 0)
-
-      <li class="nav-item">
-        <a class="nav-link text-white " href="{{ route('agence.evenement') }}">
-          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">event</i>
-          </div>
-          <span class="nav-link-text ms-1">Evenement</span>
-        </a>
-      </li>
-      @else
-      <li class="nav-item">
-        <a class="nav-link text-white " href="{{ route('agence.create-evenement') }}">
-          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">event</i>
-          </div>
-          <span class="nav-link-text ms-1">Evenement</span>
-        </a>
-      </li>
-      @endif
-
-      <li class="nav-item">
-        <a class="nav-link text-white " href="{{ route('billet.liste') }}">
-          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">receipt_long</i>
-          </div>
-          <span class="nav-link-text ms-1">Billet</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white " href="./pages/virtual-reality.html">
-          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">view_in_ar</i>
-          </div>
-          <span class="nav-link-text ms-1">Virtual Reality</span>
-        </a>
-      </li>
-    
-      <li class="nav-item">
         <a class="nav-link text-white " href="./pages/notifications.html">
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">notifications</i>
@@ -92,23 +116,8 @@
           <span class="nav-link-text ms-1">Notifications</span>
         </a>
       </li>
-      
-      <!-- <li class="nav-item">
-        <a class="nav-link text-white " href="./pages/sign-in.html">
-          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">login</i>
-          </div>
-          <span class="nav-link-text ms-1">Sign In</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white " href="./pages/sign-up.html">
-          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">assignment</i>
-          </div>
-          <span class="nav-link-text ms-1">Sign Up</span>
-        </a>
-      </li> -->
+      @endif
+   
     </ul>
   </div>
   <div class="sidenav-footer position-absolute w-100 bottom-0 ">
