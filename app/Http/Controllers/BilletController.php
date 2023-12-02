@@ -20,11 +20,13 @@ class BilletController extends Controller
             
             // Récupère tous les événements liés à l'agence
             $evenements = $agence->evenements;
-    
+            $billets = [];
             foreach ($evenements as $evenement) {
-                $billets = $evenement->billets;
+                // Récupère les billets liés à chaque événement
+                $billetsEvenement = $evenement->billets;
     
-                // Traitement des billets...
+                // Ajoute les billets de l'événement actuel au tableau global de billets
+                $billets = array_merge($billets, $billetsEvenement->all());
             }
     
             $typebillets = Typebillet::all();

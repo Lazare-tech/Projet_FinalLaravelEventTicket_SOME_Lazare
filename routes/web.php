@@ -7,6 +7,7 @@ uSE App\Http\Controllers\EvenementController;
 uSE App\Http\Controllers\BilletController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AgenceController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//EVENEMENT
+//..........................EVENEMENT
 Route::get('dashboard',[EvenementController::class, 'dashboard_agence'])->name('agence.dashboard_agence');
 Route::get('/evenement_liste',[EvenementController::class, 'evenement_page']);
 
@@ -45,7 +46,7 @@ Route::post('/update-evenement/traitement',[EvenementController::class, 'update_
 
 Route::get('/delete-evenement/{id}',[EvenementController::class, 'delete_evenement']);
 
-//BILLET
+//..............................BILLET
 Route::get('billet',[BilletController::class, 'liste_billet'])->name('billet.liste');
 Route::get('create-billet',[BilletController::class, 'ajout_billet'])->name('billet.ajout');
 Route::post('ajout_billet/traitement',[BilletController::class, 'ajout_traitement_billet']);
@@ -56,12 +57,12 @@ Route::get('/detail-evenement/{id}',[BilletController::class, 'detail_evenement'
 Route::get('/acheter-billet/{id}/',[BilletController::class, 'acheter_billet'])->name('biller.acheter');
 Route::post('/evenement/payer/',[BilletController::class, 'payer'])->name('evenement.payer');
 
-//MENU
+//..............................MENU
 Route::get('/contact',[MenuController::class, 'contact'])->name('menu.contact');
 Route::post('/contact/traitement',[ContactController::class, 'contact']);
 Route::get('/faq',[MenuController::class, 'faq'])->name('menu.faq');
 Route::get('/apropos',[MenuController::class, 'apropos'])->name('menu.apropos');
-//AGENCE
+//.............................AGENCE
 Route::get('/liste-agence',[AgenceController::class, 'agence'])->name('agence.liste-agence');
 
 Route::get('/create-agence',[AgenceController::class, 'create_agence'])->name('agence.create-agence');

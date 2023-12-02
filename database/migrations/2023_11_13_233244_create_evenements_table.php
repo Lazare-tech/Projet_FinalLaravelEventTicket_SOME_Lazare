@@ -25,22 +25,20 @@ return new class extends Migration
             $table->dateTime('date_debut');
             $table->dateTime('date_fin');
             $table->timestamps();
-            // Clés étrangères categorie
-$table->unsignedBigInteger('categorie_id');
-$table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
+                        // Clés étrangères categorie
+            $table->unsignedBigInteger('categorie_id');
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
 
- //cle evenement
- $table->unsignedBigInteger('agence_id');
- $table->foreign('agence_id')->references('id')->on('agences')->onDelete('cascade');
-//
-   //
-   $table->unsignedBigInteger('etat_id');
-   $table->foreign('etat_id')->references('id')->on('etats')->onDelete('cascade');
-   
+            //cle evenement
+            $table->unsignedBigInteger('agence_id');
+            $table->foreign('agence_id')->references('id')->on('agences')->onDelete('cascade');
+            //
+            //
+            $table->unsignedBigInteger('etat_id');
+            $table->foreign('etat_id')->references('id')->on('etats')->onDelete('cascade');
 
         });
     }
-
     /**
      * Reverse the migrations.
      *

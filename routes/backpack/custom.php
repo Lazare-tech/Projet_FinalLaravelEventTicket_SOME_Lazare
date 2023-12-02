@@ -29,4 +29,6 @@ Route::group([
     Route::crud('role', 'RoleCrudController');
     Route::crud('timezone', 'TimezoneCrudController');
     Route::crud('typebillet', 'TypebilletCrudController');
+    Route::crud('contact-controller', 'ContactControllerCrudController');
+    Route::crud('contact', 'ContactCrudController');
 }); // this should be the absolute last line of this file

@@ -70,9 +70,15 @@
           <div class="section-heading">
             <a href="#nous_contacter"><h2>Nous contacter</h2><a href=""></a>
           </div>
+          @if (session('status'))
+          <div class="alert alert-success text-white">
+            {{ session('status') }}
+          </div>
+          @endif
         </div>
         <div class="col-md-8" id="nous_contacter">
-          <form id="contact" action="/contact/traitement" method="post">
+          <form  action='/contact/traitement' method="POST"  enctype="multipart/form-data" >
+          @csrf
             <div class="row">
               <div class="col-md-8">
                   <fieldset>
@@ -101,7 +107,7 @@
               </div>
               <div class="col-md-12">
                 <fieldset>
-                  <button type="submit" id="form-submit" class="button">Envoyer</button>
+                  <button type="submit" id="" >Envoyer</button>
                 </fieldset>
               </div>
             </div>

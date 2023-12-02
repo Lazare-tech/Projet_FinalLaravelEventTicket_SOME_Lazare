@@ -100,7 +100,7 @@
                           aria-valuemax="100"></div>
                       </div>
                       <div id="step1" class="step active">
-                        <h4>Étape 1</h4>
+                        <h2>Detail de l'evenement</h2>
                         <div class="row mb-3">
                           <div class="col-lg-6">
                             <label for="Nom" class="form-label text-muted">Nom de l'evenement</label>

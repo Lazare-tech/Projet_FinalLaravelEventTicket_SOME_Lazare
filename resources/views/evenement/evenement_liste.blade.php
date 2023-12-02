@@ -128,12 +128,7 @@
           <i class="fas fa-angle-double-left"></i>
         </button>
         <div class="scroll-images ">
-          <div class="px-2">
-
-            <img src="images/event9.jpeg" alt="" class="card-evenement-miniature">
-            <h4 class="text-center text-white">Titre</h4>
-
-          </div>
+         
           <div class="px-2">
 
             <img src="images/event8.jpeg" alt="" class="card-evenement-miniature">
@@ -147,7 +142,12 @@
             <h4 class="text-center text-white">Titre</h4>
 
           </div>
+          <div class="px-2">
 
+            <img src="images/event2.jpeg" alt="" class="card-evenement-miniature">
+            <h4 class="text-center text-white">Titre</h4>
+
+          </div>
 
         </div>
 

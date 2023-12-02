@@ -87,22 +87,22 @@
                       <tr>
                         
                         <td>
-                          <p class="text-xs font-weight-bold mb-0">{{ $agence->nom }}</p>
+                          <p class="text-lg font-weight-bold mb-0">{{ $agence->nom }}</p>
                         </td>
                         <td class="align-middle text-center text-sm">
-                          <p class="text-xs font-weight-bold mb-0">{{ $agence->contact }}</p>
+                          <p class="text-lg font-weight-bold mb-0">{{ $agence->contact }}</p>
 
                         </td>
                         <td class="align-middle text-center">
-                          <p class="text-xs font-weight-bold mb-0">{{ $agence->adresse }}</p>
+                          <p class="text-lg font-weight-bold mb-0">{{ $agence->adresse }}</p>
 
                         </td>
                         <td class="align-middle text-center">
-                            <p class="text-xs font-weight-bold mb-0">{{ $agence->email}}</p>
+                            <p class="text-lg font-weight-bold mb-0">{{ $agence->email}}</p>
   
                           </td>
                           <td class="align-middle text-center">
-                            <p class="text-xs font-weight-bold mb-0">{{ $agence->description}}</p>
+                            <p class="text-lg font-weight-bold mb-0">{{ $agence->description}}</p>
   
                           </td>
                      

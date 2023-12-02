@@ -38,7 +38,7 @@
 
 
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/contact.jpg), no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/apropos.jpg), no-repeat center center;
     background-size: cover;
     height: 70vh;
   }

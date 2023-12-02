@@ -12,6 +12,16 @@ class Agence extends Model
 {
     use CrudTrait;
     use HasFactory;
+    protected  $fillable = [
+        'nom',
+        'description',
+        'adresse',
+        'contact',
+        'email',
+        'site_web',
+        'user_id',
+           
+       ];
     
     public function user()
     {

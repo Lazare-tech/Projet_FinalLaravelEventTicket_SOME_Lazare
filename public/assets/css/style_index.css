@@ -143,6 +143,16 @@ color:white
   background: #162238;
 
 }
+
+.valider_paiement{
+  background:#0d6efd;
+  color: white;
+  width: 11.3rem;
+  height: 2.3rem;
+  border-radius: 6%;
+  margin-left: 0.7rem;
+  font-weight: bold;
+}
 .carte-container {
    background: #162238;
 

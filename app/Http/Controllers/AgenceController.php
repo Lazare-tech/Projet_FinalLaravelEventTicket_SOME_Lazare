@@ -61,7 +61,7 @@ class AgenceController extends Controller
     {
         $agence = Agence::find($id);
         
-        return view('agence.update-agence','agence');   
+        return view('agence.update-agence',compact('agence'));   
     }
     public function update_agence_traitement(Request $request)
     {
@@ -82,7 +82,6 @@ class AgenceController extends Controller
         
         $agence->update();
         return redirect('/liste-agence')->with('status', 'Agence a bien ete modifier avec succes.');
-
     }
     //DELETE
     public function delete_agence($id)

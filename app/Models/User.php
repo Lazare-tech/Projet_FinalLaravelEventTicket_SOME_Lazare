@@ -13,6 +13,8 @@ use App\Models\Commande;
 use App\Models\Entreprise;
 use App\Models\AgenceEvenementielle;
 use App\Models\Role;
+use App\Models\Contac;
+
 class User extends Authenticatable
 {
     use CrudTrait;
@@ -69,6 +71,10 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
     }
 
 

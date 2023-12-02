@@ -86,7 +86,7 @@
   
       <div class="container-fluid mt-4">
         <!-- Section 1: Bienvenue -->
-        @if(auth()->user()->agence && auth()->user()->agence->evenements->count() > 0)  
+        @if(auth()->user()->role_id == 2)  
 
         <div class="row">
           <div class="col-lg-12">

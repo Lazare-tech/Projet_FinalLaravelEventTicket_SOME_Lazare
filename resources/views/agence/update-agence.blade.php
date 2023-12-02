@@ -63,6 +63,8 @@
                             <div class="step-container">
                                 <form action="/update-agence/traitement" method="POST" enctype="multipart/form-data">
                                     @csrf
+                                    <input type="text" name="id" style="display:none" value="{{ $agence->id }}">
+
                                     <div class="step-form pt-1">
                                         <div class="progress">
                                             <div class="progress-bar" role="progressbar" style="width: 0%;"

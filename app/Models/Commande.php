@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Users;
+use App\Models\User;
 use App\Models\Billet;
 
 class Commande extends Model
@@ -15,7 +15,7 @@ class Commande extends Model
     //
     public function utilisateur()
     {
-        return $this->belongsTo(Users::class);
+        return $this->belongsTo(User::class);
     }
 
     public function billets()

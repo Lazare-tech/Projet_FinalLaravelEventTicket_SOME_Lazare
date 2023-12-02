@@ -64,10 +64,12 @@
   <section class="container">
   <div class="row">
   
-    <div class="col-lg-6">
+    <div class="col-lg-6 "  style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
     
-      <form class="mt-3">
+      <form class="mt-3 ">
+        <h4 class="">Details de l'achat du billet</h4>
         <div class="mb-3">
+        
           <label for="nom" class="form-label">Nom complet:</label>
           <input type="text" class="form-control" id="nom" name="nom" value="{{ $user->name }}" readonly>
         </div>
@@ -75,13 +77,18 @@
           <label for="email" class="form-label">Adresse e-mail:</label>
           <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" readonly>
         </div>
-        <button type="submit" class="btn btn-primary">Payer</button>
       </form>
+      <p class="text-muted mt-5">Veuillez verifier votre adresse e-mail afin de recevoir le(s) billet(s)</p>
     </div>
-    <div class="col-lg-6 mt-5">
+    <div class="col-lg-6 mt-5"  style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
 
       <table class="table">
         <thead>
+        <tr>
+          <th colspan="4">       
+            <span class="text-center">Commande pour {{ $evenements->nom }}</span>
+          </th> 
+        </tr>
           <tr>
             <th>Billet</th>
             <th>Quantité</th>
@@ -116,26 +123,49 @@
   </div>
    
 
-    <section class="container">
+    <section class="container mb-5">
 
-      <div class="row mb-3">
+      <div class="row mt-5">
         <div class="col-lg-6"></div>
-        <div class="col-lg-6 ">
+        <div class="col-lg-6" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
 
           <div class="">
             <h5>Options de paiement</h5>
             <div class="form-check">
               <input type="radio" class="form-check-input" id="option-paiement-orange" name="option_paiement"
-                value="orange">
+                value="orange" onclick="togglePaymentDetails('orange')">
               <label class="form-check-label" for="option-paiement-orange">Orange Money</label>
             </div>
             <div class="form-check">
               <input type="radio" class="form-check-input" id="option-paiement-momo" name="option_paiement"
-                value="momo">
+                value="momo" onclick="togglePaymentDetails('momo')">
               <label class="form-check-label" for="option-paiement-momo">Mobile Money</label>
+            </div>
+        
+            <!-- Input and button for payment details -->
+            <div id="payment-details-orange" style="display: none;">
+              <input type="text" id="payment-number" name="payment_number" class="form-control" placeholder="Numero de telephone">
+              <button type="button" class="valider_paiement  mt-3 mb-2">Valider le paiement</button>
+            </div>
+        
+            <div id="payment-details-momo" style="display: none;" >
+              <input type="text" id="payment-number" name="payment_number" class="form-control" placeholder="Numero de telephone">
+              <button type="button" class="valider_paiement mt-3 mb-2">Valider le paiement</button>
             </div>
           </div>
         </div>
+        
+        <script>
+        function togglePaymentDetails(option) {
+          // Hide all payment details divs
+          document.getElementById('payment-details-orange').style.display = 'none';
+          document.getElementById('payment-details-momo').style.display = 'none';
+        
+          // Show the selected payment details div
+          document.getElementById('payment-details-' + option).style.display = 'block';
+        }
+        </script>
+        
       </div>
     </section>
 

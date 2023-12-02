@@ -89,8 +89,10 @@
             mollit aliquip ad.
 
           </p>
+          @if(auth()->user())
           <button type="button" class="acheter" data-bs-toggle="modal" data-bs-target="#exampleModal"
             data-bs-whatever="@mdo">Acheter maintenant</button>
+           
           <form action="{{ route('evenement.payer') }}" method="POST">
             @csrf
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -127,6 +129,11 @@
                     <input type="submit" class="" value="Payer">
                   </div>
           </form>
+          @else
+          <div class="alert alert-danger">
+          <a href="/register" class="text-danger"> Connectez vous avant d'acheter</a>
+          </div>
+          @endif
       </div>
     </div>
   </div>

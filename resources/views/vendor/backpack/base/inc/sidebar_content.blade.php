@@ -14,3 +14,5 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('role') }}"><i class="nav-icon la la-question"></i> Roles</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('timezone') }}"><i class="nav-icon la la-question"></i> Timezones</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('typebillet') }}"><i class="nav-icon la la-question"></i> Typebillets</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('contact-controller') }}"><i class="nav-icon la la-question"></i> Contact controllers</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('contact') }}"><i class="nav-icon la la-question"></i> Contacts</a></li>

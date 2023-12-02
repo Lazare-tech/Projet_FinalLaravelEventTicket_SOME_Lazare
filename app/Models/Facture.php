@@ -6,7 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Evenement;
-use App\Models\Users;
+use App\Models\User;
 use App\Models\Billet;
 
 class Facture extends Model
@@ -21,7 +21,7 @@ class Facture extends Model
 
     public function utilisateur()
     {
-        return $this->belongsTo(Users::class);
+        return $this->belongsTo(User::class);
     }
     public function billets() {
         return $this->hasMany(Billet::class);

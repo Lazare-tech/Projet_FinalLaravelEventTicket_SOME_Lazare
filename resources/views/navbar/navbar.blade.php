@@ -53,6 +53,10 @@
         <li class="nav-item">
           <a class="nav-link active text-white fw-bold" aria-current="page" href="/">ACCEUIL</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="/evenement_liste">EVENEMENT</a>
+
+        </li>
       
         <li class="nav-item">
           <a class="nav-link text-white fw-bold" href="{{ route('menu.apropos') }}">A PROPOS</a>
@@ -76,6 +80,10 @@
 
         <li class="nav-item">
           <a class="nav-link active text-white fw-bold" aria-current="page" href="/">ACCEUIL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold" href="/evenement_liste">EVENEMENT</a>
+
         </li>
       
         <li class="nav-item">

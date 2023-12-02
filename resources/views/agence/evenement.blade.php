@@ -83,34 +83,33 @@
                     @endif
                          @if(auth()->user()->agence && auth()->user()->agence->evenements->count() > 0)
 
-
                         @foreach ($evenement as $evenement )
                       <tr>
                         <td>
                           <div class="d-flex px-2 py-1">
                             <div>
-                              <img src="{{ asset('storage/' . $evenement->photo) }}" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                              <img src="{{ asset('storage/' . $evenement->photo) }}" class="" alt="user1" style="width: 80px;height:80px;border-radius: 50%;">
                             </div>
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-sm">{{ $evenement->nom }}</h6>
-                              <p class="text-xs text-secondary mb-0">{{ $evenement->lieu}}</p>
+                              <h6 class="mb-0 text-lg">{{ $evenement->nom }}</h6>
+                              <p class="text-lg text-secondary mb-0">{{ $evenement->lieu}}</p>
                             </div>
                           </div>
                         </td>
                         <td>
-                          <p class="text-xs font-weight-bold mb-0">{{ $evenement->etat->nom }}</p>
+                          <p class="text-lg font-weight-bold mb-0">{{ $evenement->etat->nom }}</p>
                           <!-- <p class="text-xs text-secondary mb-0">Organization</p> -->
                         </td>
                         <td class="align-middle text-center text-sm">
-                          <p class="text-xs font-weight-bold mb-0">{{ $evenement->resume }}</p>
+                          <p class="text-lg font-weight-bold mb-0">{{ $evenement->resume }}</p>
 
                         </td>
                         <td class="align-middle text-center">
-                          <p class="text-xs font-weight-bold mb-0">{{ $evenement->date_debut }}</p>
+                          <p class="text-lg font-weight-bold mb-0">{{ $evenement->date_debut }}</p>
 
                         </td>
                         <td class="align-middle text-center">
-                            <p class="text-xs font-weight-bold mb-0">{{ $evenement->date_fin }}</p>
+                            <p class="text-lg font-weight-bold mb-0">{{ $evenement->date_fin }}</p>
   
                           </td>
                         <!-- <td class="align-middle">

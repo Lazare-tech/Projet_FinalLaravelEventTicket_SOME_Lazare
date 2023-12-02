@@ -51,7 +51,7 @@
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <a href="#trouver-evenement"><button type="button"
               class=" btn-lg px-4 text-white fw-bold gap-3 trouvez_des_evenement">Trouvez des evenements</button></a>
-          <button type="button" class="px-4 text-dark creez_un_evenement fw-bold">Achetez un billet</button>
+          <a href="/evenement_liste"><button type="button" class="px-4 text-dark creez_un_evenement fw-bold">Achetez un billet</button></a>
         </div>
       </div>
     </div>
@@ -264,93 +264,6 @@
       </div>
     </div>
   </section>
-  <!-- <section class="container mt-5">
-  <div class="row text-center mb-4">
-    <h5 class="fw-bold text-uppercase">Événements à portée de main</h5>
-    <h3 class="fw-bold"><span class="text-dark">Découvrez</span> nos catégories</h3>
-  </div>
-  <div class="row g-4 justify-content-center">
-
-    <div class="col-lg-3">
-      <div class="card categorie-evenement text-center p-4 shadow">
-        <img src="images/musique.svg" class="card_categorie-evenement" alt="Musique" style="margin: auto;">
-        <div class="card-body">
-          <h5 class="card-title text-warning fw-bold mb-0">Musique</h5>
-          <p class="card-text">Explorez le monde musical</p>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-</section> -->
-
-
-  <!-- <section class="container py-5">
-  <div class="para">
-    <p class="n">
-    <h5 style="color:#d68742">lorem ipsum<br></h5>
-    <h1>Pariatur mollit quis proident ullamco exercitation..</h1>
-    </p>
-  </div>
-</section>
-
-<section class="container">
-  <div class="row">
-    <div class="col-lg-6">
-      <h5><b>Aute eu nostrud velit aliquip aliqua laboris esse id proident in sit sit.</b></h5><br>
-      <p>Never again waste time thinking about what to eat! Omnifood AI<br>
-        will create a 100% personalized weekly meal plan just for you. It<br>
-        makes sure you get all the nutrients and vitamins you need, no<br>
-        matter what diet you follow!</p>
-    </div>
-    <div class="col-lg-6">
-      <img src="" alt="images ici">
-    </div>
-  </div>
-  <div class="row py-5">
-    <div class="col-lg-6">
-      <img src="" alt="images ici">
-    </div>
-    <div class="col-lg-6">
-      <h5><b>Aliquip tempor est commodo adipisicing voluptate quis deserunt.</b></h5><br>
-      <p>Never again waste time thinking about what to eat! Omnifood AI<br>
-        will create a 100% personalized weekly meal plan just for you. It<br>
-        makes sure you get all the nutrients and vitamins you need, no<br>
-        matter what diet you follow!</p>
-    </div>
-
-  </div>
-  <div class="row py-5">
-
-    <div class="col-lg-6">
-      <h5><b>Sunt pariatur mollit nostrud aliquip in exercitation sunt magna elit.</b></h5><br>
-      <p>Never again waste time thinking about what to eat! Omnifood AI<br>
-        will create a 100% personalized weekly meal plan just for you. It<br>
-        makes sure you get all the nutrients and vitamins you need, no<br>
-        matter what diet you follow!</p>
-    </div>
-    <div class="col-lg-6">
-      <img src="" alt="images ici">
-    </div>
-
-  </div>
-  <div class="row py-5">
-    <div class="col-lg-6">
-      <img src="" alt="images ici">
-    </div>
-    <div class="col-lg-6">
-      <h5><b>Sunt laboris exercitation ea culpa qui ad aliqua minim.</b></h5><br>
-      <p>Never again waste time thinking about what to eat! Omnifood AI<br>
-        will create a 100% personalized weekly meal plan just for you. It<br>
-        makes sure you get all the nutrients and vitamins you need, no<br>
-        matter what diet you follow!</p>
-    </div>
-
-
-  </div>
-</section> -->
-
 
   <!-- section evenement a venir -->
   <!-- <hr class="container mt-5"> -->
@@ -416,12 +329,7 @@
           <i class="fas fa-angle-double-left"></i>
         </button>
         <div class="scroll-images ">
-          <div class="px-2">
-
-            <img src="images/event9.jpeg" alt="" class="card-evenement-miniature">
-            <h4 class="text-center text-white">Titre</h4>
-
-          </div>
+          
           <div class="px-2">
 
             <img src="images/event8.jpeg" alt="" class="card-evenement-miniature">
@@ -435,6 +343,14 @@
             <h4 class="text-center text-white">Titre</h4>
 
           </div>
+          <div class="px-2">
+
+            <img src="images/event2.jpeg" alt="" class="card-evenement-miniature">
+            <h4 class="text-center text-white">Titre</h4>
+
+          </div>
+         
+          
 
 
         </div>

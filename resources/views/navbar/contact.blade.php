@@ -67,28 +67,34 @@
           <div class="section-heading">
             <h2>Nous contacter</h2>
           </div>
+                  
+          @if (session('status'))
+          <div class="alert alert-success text-white">
+            {{ session('status') }}
+          </div>
+          @endif
         </div>
         <div class="col-md-8">
-          <form id="contact" action="" method="post">
+          <form id="contact" action="/contact/traitement" method="post">
             <div class="row">
               <div class="col-md-8">
                   <fieldset>
-                    <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required="">
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Your Name">
                   </fieldset>
                 </div>
                 <div class="col-md-8">
                   <fieldset>
-                    <input name="email" type="text" class="form-control" id="email" placeholder="Your Email" required="">
+                    <input name="email" type="text" class="form-control" id="email" placeholder="Your Email">
                   </fieldset>
                 </div>
               <div class="col-md-12">
                 <fieldset>
-                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..."></textarea>
                 </fieldset>
               </div>
               <div class="col-md-12">
                 <fieldset>
-                  <button type="submit" id="form-submit" class="button">Envoyer</button>
+                  <button type="submit" id="" class="">Envoyer</button>
                 </fieldset>
               </div>
             </div>
